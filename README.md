@@ -1,12 +1,6 @@
-# Eleventy Photo Gallery
+# Nacho Alonso
+Cloned from [https://github.com/tannerdolby/eleventy-photo-gallery](https://github.com/tannerdolby/eleventy-photo-gallery)
 
-A starter site for creating your own photo or art gallery using the [Eleventy](https://github.com/11ty/eleventy) static site generator.
-
-- [Live demo](https://eleventy-gallery.netlify.app/) - View the project live
-- [Deploy on Netlify](https://app.netlify.com/) - Host your own custom gallery
-
-## Getting Started
-Quickly generate a highly performant photo gallery from this template by clicking the green [Use Template](https://github.com/tannerdolby/eleventy-photo-gallery/generate) button. Creating a template repository provides the same directory structure and files as the original project.
 
 ## Features 
 - Build-time image transformations and responsive image markup in templates using [@11ty/eleventy-img](https://www.11ty.dev/docs/plugins/image/)

@@ -1,7 +1,7 @@
 <div class="gallery">
-  <ul class="image-grid">
+  <ul class="grid-container">
     {% for image in gallery %}
-    <li class="image-container">
+    <li class="grid-item">
         <a
           href="/gallery/{{ image.title | slug }}"
           aria-label="Gallery image {{ image.title }}"
