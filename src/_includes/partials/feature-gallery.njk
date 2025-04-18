@@ -2,7 +2,7 @@
     <ul class="gallery-list">
         {% for image in gallery %}
         <li class="gallery-item">
-            <div class="image-block">
+            <div class="grid-item__content image-block">
                 <a
                     href="{{ image.title | slug }}"
                     aria-label="Gallery image {{ image.title }}"

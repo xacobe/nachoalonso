@@ -64,7 +64,7 @@ header .nav-main .home-button {
 header .intro {
   display: flex;
   justify-content: center;
-  margin: 2rem auto 1rem auto;
+  margin: 0 auto;
   max-width: 1100px;
   padding: 0 1.5rem;
 }
@@ -81,7 +81,6 @@ header .intro .home-button {
   font-weight: bolder;
   text-transform: uppercase;
   color: #222;
-  margin-bottom: 14px;
 }
 header .intro .hire-me {
   border: 1px solid #111;
@@ -189,6 +188,41 @@ header .intro .hire-me:hover {
 }
 .image-grid .image-container a:focus img {
   border: 3px solid #07c;
+}
+
+/* Contenedor principal (activa Container Queries) */
+.grid-container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 20cqmin, 200px), 1fr)); /* Usa cqmin para ancho/alto más pequeño */
+  gap: 10px;
+  padding: 10px;
+  list-style: none;
+  container-type: size; /* Permite usar Container Queries */
+}
+
+/* Items del grid (cuadrados perfectos) */
+.grid-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1; /* Alternativa moderna a padding-bottom */
+}
+
+/* Enlace e imagen */
+.grid-item > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden; /* Recorta el exceso */
+}
+
+.grid-item picture,
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* o "contain" si prefieres no recortar */
 }
 
 .featured-img {
@@ -463,8 +497,7 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
 }
 main .gallery {
   margin: 3rem auto;
-  max-width: 1100px;
-  padding: 0 1.5rem;
+  max-width: 1080px;
 }
 main .gallery-header {
   max-width: 1100px;
