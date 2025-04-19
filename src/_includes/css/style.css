@@ -50,9 +50,7 @@ header .nav-main .home-button {
   font-weight: 500;
 }
 header .intro {
-  margin: 0 auto;
-  max-width: min-content;
-  padding: 0 1.5rem;
+  padding-block-start: 1rem;
 }
 header .intro div p {
   color: #333;
@@ -85,10 +83,6 @@ header .intro .hire-me {
 }
 header .intro .hire-me:hover {
   background: #1a1f24;
-}
-
-:root {
-  --cell-offset: 0.5s;
 }
 
 .main-gallery {
@@ -182,8 +176,7 @@ header .intro .hire-me:hover {
   border: 3px solid #07c;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -193,7 +186,7 @@ body {
   display: grid;
   height: 100vh;
   width: 100vw;
-  gap: 1rem;
+  gap: 0.2rem;
 }
 
 /* Modo por defecto (horizontal intermedio) */
@@ -202,12 +195,18 @@ body {
   grid-template-rows: repeat(3, 1fr);
 }
 
+.header {
+  justify-content: flex-start;
+}
+
 /* Muy apaisado: más columnas */
 @media (min-aspect-ratio: 5/2) {
   .grid-container {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
+  }
+  .header {
+    justify-content: flex-end;
   }
 }
 /* Muy vertical: más filas */
@@ -216,14 +215,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
+  .header {
+    justify-content: center !important;
+  }
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 10px;
-}
-
 .grid-item {
   overflow: hidden;
   width: 100%;
@@ -240,9 +235,9 @@ body {
   transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
 }
 .grid-item a.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 1 !important;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
 .grid-item a:first-child.active {
   z-index: 2;
@@ -253,6 +248,35 @@ body {
   object-fit: cover;
   display: block;
   transform: translateZ(0);
+}
+
+@keyframes random-cycle {
+  0%, 20% {
+    opacity: 1;
+    visibility: visible;
+  }
+  25%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.grid-item.css-animated a {
+  animation: random-cycle 15s infinite;
+}
+.grid-item.css-animated a:nth-child(1) {
+  animation-delay: 0s;
+}
+.grid-item.css-animated a:nth-child(2) {
+  animation-delay: 3s;
+}
+.grid-item.css-animated a:nth-child(3) {
+  animation-delay: 6s;
+}
+.grid-item.css-animated a:nth-child(4) {
+  animation-delay: 9s;
+}
+.grid-item.css-animated a:nth-child(5) {
+  animation-delay: 12s;
 }
 
 .featured-img {
@@ -644,7 +668,7 @@ h2, .h2 {
   position: absolute;
   color: #fff;
   width: 100%;
-  justify-content: center;
+  z-index: 10;
 }
 .header a {
   color: white !important;

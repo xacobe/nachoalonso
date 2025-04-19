@@ -1,116 +1,109 @@
-:root{
-  --cell-offset: 0.5s;
-}
 .main-gallery {
-  max-width: 1100px;
-  margin: 3rem auto 0 auto;
+    max-width: 1100px;
+    margin: 3rem auto 0 auto;
 }
 
 .gallery-h1 {
-  text-align: center;
-  margin-bottom: 4.25rem;
+    text-align: center;
+    margin-bottom: 4.25rem;
 }
 
 .gallery-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-  max-width: 1100px;
-  gap: 50px;
-  margin: 1.5rem auto 1rem auto;
-  list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    max-width: 1100px;
+    gap: 50px;
+    margin: 1.5rem auto 1rem auto;
+    list-style: none;
 }
-
+    
 .gallery-item {
-  margin: .5rem auto;
-  width: 100%;
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  .image-block {
-    display: flex;
-    flex-direction: column;
+    margin: .5rem auto;
     width: 100%;
-    max-width: 80ch;
 
-    .block-details {
-      margin: 1rem 0 0;
-
-      p {
-        margin-bottom: 0;
-        color: #333;
-      }
+    &:last-child {
+        border-bottom: none;
     }
-  }
 
-  a {
-    color: #212121;
+    .image-block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 80ch;
 
-    .gallery-photo {
-      max-width: 100%;
-      height: 500px;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 2px;
-      filter: brightness(99%);
-      transition: filter 0.5s ease;
+        .block-details {
+            margin: 1rem 0 0;
 
-      &:hover {
-        filter: brightness(105%);
-        transform-origin: 50% 50%;
-        cursor: pointer;
-      }
+            p {
+                margin-bottom: 0;
+                color: #333;
+            }
+        }
     }
-  }
+
+    a {
+        color: #212121;
+
+        .gallery-photo {
+            max-width: 100%;
+            height: 500px;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 2px;
+            filter: brightness(99%);
+            transition: filter 0.5s ease;
+
+            &:hover {
+                filter: brightness(105%);
+                transform-origin: 50% 50%;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .image-grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  gap: 3px;
-  max-width: 1100px;
-  margin: 1rem auto 3rem auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 3px;
+    max-width: 1100px;
+    margin: 1rem auto 3rem auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 
-  .image-container {
-    width: 100%;
-    height: 20rem;
-    overflow: hidden;
-    border-radius: 2px;
-
-    a {
-      .grid-image {
-        object-fit: cover;
-        height: 100%;
+    .image-container {
         width: 100%;
-        transform-origin: 50% 50%;
-        filter: brightness(99%);
-        transition: filter 0.5s ease;
-      }
+        height: 20rem;
+        overflow: hidden;
+        border-radius: 2px;
 
-      img {
-        &:hover {
-          filter: brightness(110%);
-          box-shadow: 0px 0px 0px 2px #000;
-          transform-origin: 50% 50%;
-          cursor: pointer;
+        a {
+            .grid-image {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                transform-origin: 50% 50%;
+                filter: brightness(99%);
+                transition: filter 0.5s ease;
+            }
+            img {
+                &:hover {
+                    filter: brightness(110%);
+                    box-shadow: 0px 0px 0px 2px #000;
+                    transform-origin: 50% 50%;
+                    cursor: pointer;
+                }
+            }
+            &:focus {
+                img {
+                    border: 3px solid #07c;
+                }
+            }
         }
-      }
-
-      &:focus {
-        img {
-          border: 3px solid #07c;
-        }
-      }
     }
-  }
 }
-
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -120,7 +113,7 @@ body {
   display: grid;
   height: 100vh;
   width: 100vw;
-  gap: 1rem;
+  gap: .2rem;
 }
 
 /* Modo por defecto (horizontal intermedio) */
@@ -128,13 +121,17 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
-
+.header {
+  justify-content: flex-start;
+}
 /* Muy apaisado: más columnas */
 @media (min-aspect-ratio: 5/2) {
   .grid-container {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
+  }
+  .header {
+    justify-content: flex-end;
   }
 }
 
@@ -144,13 +141,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
+  .header {
+    justify-content: center !important;
+  }
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 10px;
-}
+
 
 .grid-item {
   overflow: hidden;
@@ -168,9 +163,9 @@ body {
     transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
     
     &.active {
-      opacity: 1 !important;
-      visibility: visible !important;
-      z-index: 1 !important; // Asegura que la imagen activa esté sobre las demás
+      opacity: 1;
+      visibility: visible;
+      z-index: 1; // Asegura que la imagen activa esté sobre las demás
     }
     
     // Para el primer elemento activo al cargar
@@ -187,40 +182,23 @@ body {
     transform: translateZ(0); // Optimización hardware
   }
 }
+// Animación alternativa por si prefieres CSS puro (sin JavaScript)
+@keyframes random-cycle {
+  0%, 20% { opacity: 1; visibility: visible; }
+  25%, 100% { opacity: 0; visibility: hidden; }
+}
 
-// @keyframes cycle-5 {
-//   /* tramo 1: 0–20% (0–2s) → 1er enlace */
-//   0%, 20% {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-//   20.0001%, 100% {
-//     opacity: 0;
-//     visibility: hidden;
-//   }
-// }
-
-// /* 1er enlace: empieza en time = var(--cell-offset) + 0s */
-// .grid-item a:nth-child(1) {
-//   animation-delay: calc(var(--cell-offset) * 1s + 0s);  /* tramo 0–2s */
-// }
-
-// /* 2º enlace: empieza en time = var(--cell-offset) + 2s */
-// .grid-item a:nth-child(2) {
-//   animation-delay: calc(var(--cell-offset) * 1s + 2s);
-// }
-
-// /* 3er enlace: +4s */
-// .grid-item a:nth-child(3) {
-//   animation-delay: calc(var(--cell-offset) * 1s + 4s);
-// }
-
-// /* 4º enlace: +6s */
-// .grid-item a:nth-child(4) {
-//   animation-delay: calc(var(--cell-offset) * 1s + 6s);
-// }
-
-// /* 5º enlace: +8s */
-// .grid-item a:nth-child(5) {
-//   animation-delay: calc(var(--cell-offset) * 1s + 8s);
-// }
+// Clase alternativa para animación CSS (opcional)
+.grid-item.css-animated {
+  a {
+    animation: random-cycle 15s infinite;
+    
+    // Retrasos aleatorios generados por CSS (limitado)
+    &:nth-child(1) { animation-delay: 0s; }
+    &:nth-child(2) { animation-delay: 3s; }
+    &:nth-child(3) { animation-delay: 6s; }
+    &:nth-child(4) { animation-delay: 9s; }
+    &:nth-child(5) { animation-delay: 12s; }
+  }
+}
+    
