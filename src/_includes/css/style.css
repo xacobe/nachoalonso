@@ -193,7 +193,7 @@ header .intro .hire-me:hover {
 /* Contenedor principal (activa Container Queries) */
 .grid-container-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 25vw, 155px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 25vw, 185px), 1fr));
   gap: 10px;
   padding: 10px;
   list-style: none;
@@ -538,10 +538,6 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: clamp(1.5rem, 5vw, 1.8rem);
-}
-
-#main {
-  margin-top: 3rem;
 }
 
 .about-page {
