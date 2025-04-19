@@ -371,4 +371,11 @@ h2, .h2 {
   height: 4rem;
   display: grid;
   place-items: center;
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  
+  a {
+    color: white !important;
+  }
 }

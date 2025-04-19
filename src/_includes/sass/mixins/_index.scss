@@ -1,13 +1,1 @@
 @forward "./screen-reader-only";
-
-.grid-container {
-    display: grid;
-    /* 4 columnas de tamaño igual basado en el ancho del viewport */
-    grid-template-columns: repeat(4, min(20vw, 20vh));
-    /* 5 filas del mismo tamaño que las columnas para mantener cuadrados */
-    grid-template-rows: repeat(5, min(20vw, 20vh));
-    gap: 1vmin; /* Espacio entre cuadrados relativo al viewport más pequeño */
-    justify-content: center;
-    padding: 1vmin;
-    box-sizing: border-box;
-}

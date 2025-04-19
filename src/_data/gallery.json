@@ -9,6 +9,15 @@
         "imgDir": "/images/"
     },
     {
+        "title": "Red light streaks across a street intersection at night",
+        "date": "October 16, 2020",
+        "credit": "Photo by Jan Kopriva",
+        "linkToAuthor": "https://www.pexels.com/photo/light-streaks-3290601/",
+        "src": "light-streaks.jpg",
+        "alt": "Red light streaks across a street intersection at night",
+        "imgDir": "/images/"
+    },
+    {
         "title": "Highway covered in water",
         "date": "October 20, 2020",
         "credit": "Photo by Josh Hild",
@@ -24,15 +33,6 @@
         "linkToAuthor": "https://www.pexels.com/photo/brown-painted-wall-on-dim-light-1055613/",
         "src": "benches.jpg",
         "alt": "Brown painted wall with two benches and dim light above",
-        "imgDir": "/images/"
-    },
-    {
-        "title": "Red light streaks across a street intersection at night",
-        "date": "October 16, 2020",
-        "credit": "Photo by Jan Kopriva",
-        "linkToAuthor": "https://www.pexels.com/photo/light-streaks-3290601/",
-        "src": "light-streaks.jpg",
-        "alt": "Red light streaks across a street intersection at night",
         "imgDir": "/images/"
     },
     {
