@@ -193,7 +193,7 @@ header .intro .hire-me:hover {
 /* Contenedor principal (activa Container Queries) */
 .grid-container-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 20cqmin, 200px), 1fr)); /* Usa cqmin para ancho/alto más pequeño */
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 25vw, 155px), 1fr));
   gap: 10px;
   padding: 10px;
   list-style: none;
@@ -496,8 +496,13 @@ main h1, main h2, main h3, main h4, main h5, main h6 {
   margin-bottom: 24px;
 }
 main .gallery {
-  margin: 3rem auto;
-  max-width: 1080px;
+  margin-inline: auto;
+  max-width: 40rem;
+}
+@media screen and (min-width: 972px) {
+  main .gallery {
+    max-width: 60rem;
+  }
 }
 main .gallery-header {
   max-width: 1100px;

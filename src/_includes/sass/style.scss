@@ -57,8 +57,13 @@ main {
     }
 
     .gallery {
-        margin: 3rem auto;
-        max-width: 1080px;
+        margin-inline: auto;
+        max-width: 40rem;
+
+        @media screen and (min-width: 972px) {
+            max-width: 60rem;
+            
+        }
     }
 
     .gallery-header {

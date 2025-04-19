@@ -106,7 +106,7 @@
 /* Contenedor principal (activa Container Queries) */
 .grid-container-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 20cqmin, 200px), 1fr)); /* Usa cqmin para ancho/alto más pequeño */
+    grid-template-columns: repeat(auto-fill,minmax(clamp(100px,25vw,155px),1fr));
     gap: 10px;
     padding: 10px;
     list-style: none;
