@@ -1,6 +1,6 @@
 ---
 pagination:
-    data: gallery
+    data: collections.gallery
     size: 1
     alias: image
 permalink: "/gallery/{{ image.title | slug }}/"

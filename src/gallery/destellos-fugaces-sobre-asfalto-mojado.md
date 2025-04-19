@@ -1,0 +1,11 @@
+---
+title: "Destellos fugaces sobre asfalto mojado"
+photoDate: "Febrero 24, 2024"
+credit: "Fotografía de Jan Kopriva"
+linkToAuthor: "https://www.pexels.com/photo/light-streaks-3290601/"
+src: "light-streaks.jpg"
+alt: "Líneas de luz roja capturadas sobre una avenida húmeda"
+imgDir: "./src/images/"
+eleventyComputed:
+  cellOffset: () => Math.floor(Math.random() * 10)
+---

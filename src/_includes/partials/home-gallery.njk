@@ -1,29 +1,18 @@
 <ul class="grid-container">
-  {# 1. Creamos un array con solo los primeros 60 elementos #}
-  {% set limited = gallery.slice(0, 60) %}
-  
-  {# 2. Iteramos sobre ese array y agrupamos de 5 en 5 #}
-  {% for image in limited %}
-    {# Abrimos <li> cuando el índice sea múltiplo de 5 #}
-    {% if loop.index0 % 5 == 0 %}
-      <li class="grid-item">
-    {% endif %}
-    
-    <a
-      href="/gallery/{{ image.title | slug }}"
-      aria-label="Gallery image {{ image.title }}"
+  {% for group in collections.gallery.slice(0, 60) | batch(5) %}
+    <li
+      class="grid-item"
     >
-      {% img
-        src=image.src,
-        alt=image.alt,
-        className="grid-image",
-        sizes="(min-width: 600px) 50vw, (min-width: 800px) 100vw, 33.3vw"
-      %}
-    </a>
-    
-    {# Cerramos </li> cuando el índice mod 5 sea 4, o en la última iteración #}
-    {% if loop.index0 % 5 == 4 or loop.last %}
-      </li>
-    {% endif %}
+      {% for image in group %}
+        <a href="{{ image.url }}" aria-label="Gallery image {{ image.data.title }}">
+         {% img {
+          src: image.data.src,
+          alt: image.data.alt,
+          className: "grid-image",
+          imgDir: image.data.imgDir
+        } %}
+        </a>
+      {% endfor %}
+    </li>
   {% endfor %}
 </ul>

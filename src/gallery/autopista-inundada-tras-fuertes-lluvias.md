@@ -1,0 +1,11 @@
+---
+title: "Autopista inundada tras fuertes lluvias"
+photoDate: "Enero 13, 2024"
+credit: "Imagen de Josh Hild"
+linkToAuthor: "https://www.pexels.com/photo/highway-covered-in-water-2524368/"
+src: "highway-water.jpg"
+alt: "Carretera anegada bajo un puente moderno tras una tormenta"
+imgDir: "./src/images/"
+eleventyComputed:
+  cellOffset: () => Math.floor(Math.random() * 10)
+---

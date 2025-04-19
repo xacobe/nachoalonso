@@ -1,0 +1,14 @@
+<ul class="grid-container">
+  {% for group in gallery.slice(0, 60) | batch(5) %}
+    <li
+      class="grid-item"
+      style="--cell-offset: {{ Math.floor(Math.random() * 10) }};"
+    >
+      {% for image in group %}
+        <a href="/gallery/{{ image.title | slug }}" aria-label="Gallery image {{ image.title }}">
+          {% img src=image.src, alt=image.alt, className="grid-image" %}
+        </a>
+      {% endfor %}
+    </li>
+  {% endfor %}
+</ul>

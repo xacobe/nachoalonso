@@ -1,0 +1,11 @@
+---
+title: "Brown painted wall on dim light"
+photoDate: "October 18, 2020"
+credit: "Photo by Lukas Hartmann"
+linkToAuthor: "https://www.pexels.com/photo/brown-painted-wall-on-dim-light-1055613/"
+src: "benches.jpg"
+alt: "Brown painted wall with two benches and dim light above"
+imgDir: "./src/images/"
+eleventyComputed:
+  cellOffset: () => Math.floor(Math.random() * 10)
+---

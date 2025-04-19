@@ -1,0 +1,11 @@
+---
+title: "Carretera inundada al amanecer nublado"
+photoDate: "Febrero 15, 2024"
+credit: "Fotografía de Josh Hild"
+linkToAuthor: "https://www.pexels.com/photo/highway-covered-in-water-2524368/"
+src: "highway-water.jpg"
+alt: "Puente moderno sobre una autopista inundada por la crecida del agua"
+imgDir: "./src/images/"
+eleventyComputed:
+  cellOffset: () => Math.floor(Math.random() * 10)
+---

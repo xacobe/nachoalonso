@@ -1,0 +1,11 @@
+---
+title: "Asfalto bajo el agua en amanecer gris"
+photoDate: "Marzo 22, 2024"
+credit: "Fotografía de Josh Hild"
+linkToAuthor: "https://www.pexels.com/photo/highway-covered-in-water-2524368/"
+src: "highway-water.jpg"
+alt: "Camino inundado con reflejos del cielo nublado sobre el pavimento"
+imgDir: "./src/images/"
+eleventyComputed:
+  cellOffset: () => Math.floor(Math.random() * 10)
+---

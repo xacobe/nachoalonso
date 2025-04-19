@@ -3,6 +3,8 @@ const { minify } = require("terser");
 const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
+const path = require('path'); // Añade esto con los otros requires
+
 
 module.exports = (eleventyConfig) => {
 
@@ -15,6 +17,10 @@ module.exports = (eleventyConfig) => {
   ]);
 
   markdownTemplateEngine: "njk";
+
+  eleventyConfig.addCollection("gallery", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/gallery/*.md");
+  });
 
   // Perform manual passthrough file copy to include directories in the build output _site
   eleventyConfig.addPassthroughCopy("./src/images");
@@ -58,44 +64,49 @@ module.exports = (eleventyConfig) => {
     return year.toString();
   });
 
-  eleventyConfig.addShortcode("img", async function ({ src, alt, width, height, widths, className, imgDir, sizes = "100vw"}) {
-    if (alt === undefined) {
+  eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "./src/images/" }) {
+    if (!alt) {
       throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
     }
-
-    const IMAGE_DIR = imgDir || "./src/images/";
-    const metadata = await Image(IMAGE_DIR + src, {
-      widths: widths || [300, 480, 640, 1024],
-      formats: ["webp", "jpeg"],
-      urlPath: "/img/",
-      outputDir: "_site/img",
-      defaultAttributes: {
-        loading: "lazy",
-        decoding: "async"
-      }
-    });
-
-    let lowsrc = metadata.jpeg[0];
-    let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
-
-    const sources = Object.values(metadata).map((imageFormat) => {
-      const srcType = imageFormat[0].sourceType;
-      const srcset = imageFormat.map(entry => entry.srcset).join(", ");
-      return `<source type="${srcType}" srcset="${srcset}" sizes="${sizes}">`
-    }).join("\n");
-
-    const img = `
-      <img
-        src="${lowsrc.url}"
-        width="${highsrc.width}"
-        height="${highsrc.height}"
-        alt="${alt}"
-        loading="lazy"
-        decoding="async"
-        class="${className || ''}"
-      >`;
-
-    return `<picture>\n\t${sources}\n\t${img}</picture>`;
+  
+    const fullInputPath = path.join(__dirname, imgDir, src);
+    console.log("Procesando imagen desde:", fullInputPath);
+  
+    try {
+      const metadata = await Image(fullInputPath, {
+        widths: [300, 480, 640, 1024],
+        formats: ["webp", "jpeg"],
+        urlPath: "/images/",
+        outputDir: path.join("_site", "images"),
+        filenameFormat: (id, src, width, format) => {
+          const parsed = path.parse(src);
+          return `${parsed.name}-${width}w.${format}`;
+        }
+      });
+  
+      const lowsrc = metadata.jpeg[0];
+      const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+  
+      const sources = Object.values(metadata).map((imageFormat) => {
+        return `<source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="100vw">`;
+      }).join("\n");
+  
+      return `<picture>
+        ${sources}
+        <img
+          src="${lowsrc.url}"
+          width="${highsrc.width}"
+          height="${highsrc.height}"
+          alt="${alt}"
+          loading="lazy"
+          decoding="async"
+          class="${className || ''}"
+        >
+      </picture>`;
+    } catch (error) {
+      console.error("Error procesando imagen:", error);
+      return `<div class="image-error">Error cargando imagen: ${src}</div>`;
+    }
   });
 
   return {

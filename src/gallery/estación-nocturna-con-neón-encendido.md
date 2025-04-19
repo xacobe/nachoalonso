@@ -1,0 +1,11 @@
+---
+title: "Estación nocturna con neón encendido"
+photoDate: "Abril 9, 2024"
+credit: "Fotografía de Artem Saranin"
+linkToAuthor: "https://www.pexels.com/photo/gasoline-station-during-nighttime-1453781/"
+src: "gas-station.jpg"
+alt: "Techo de estación de servicio iluminado en rojo en plena oscuridad"
+imgDir: "./src/images/"
+eleventyComputed:
+  cellOffset: () => Math.floor(Math.random() * 10)
+---
