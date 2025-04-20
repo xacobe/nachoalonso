@@ -9,3 +9,4 @@ function initLightbox() {
 
 // Llamar después de cargar contenido dinámico
 initLightbox();
+

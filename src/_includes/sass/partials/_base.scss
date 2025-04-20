@@ -1,0 +1,47 @@
+@use "../vars/" as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    background: $page-background;
+    font-family: $system-font;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $system-font;
+    color: #212121;
+}
+
+h1, .h1 {
+    $min-size: 2.75rem;
+    $pref-size: 8vw;
+    $max-size: 3.25rem;
+    font-size: clamp(2.75rem, 8vw, 3.25rem);
+}
+
+h2, .h2 {
+    $min-size: 1.5rem;
+    $pref-size: 5vw;
+    $max-size: 1.8rem;
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+}
+
+#main {
+  position: fixed;
+}
