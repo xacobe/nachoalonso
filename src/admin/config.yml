@@ -1,9 +1,15 @@
 backend:
   name: git-gateway
-  branch: master # Tu rama principal
+  branch: master
+  auth_scope: repo  # Requerido para Auth0
+  repo: "tu-usuario/tu-repositorio"  # Ej: "nachoalonso/mi-galeria-fotos"
 
-media_folder: "src/images" # Carpeta donde se guardarán las imágenes
-public_folder: "/images"  # Ruta pública
+# Configuración de Auth0
+local_backend: true  # Opcional: Para desarrollo local
+publish_mode: editorial_workflow  # Opcional: Si quieres borradores
+
+media_folder: "src/images"
+public_folder: "/images"
 
 collections:
   - name: "gallery"
