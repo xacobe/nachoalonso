@@ -23,11 +23,14 @@ module.exports = (eleventyConfig) => {
   });
 
   // Perform manual passthrough file copy to include directories in the build output _site
+    // Imagenes CSS
+  eleventyConfig.addPassthroughCopy("src/_includes/css/images");
+    
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/photos");
   eleventyConfig.addPassthroughCopy("./src/css");
   // eleventyConfig.addPassthroughCopy("./src/js");
-  eleventyConfig.addPassthroughCopy({ "src/_includes/js": "js" });
+  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
 
   eleventyConfig.addPassthroughCopy("./src/favicon_data");
   // Copiar los assets de baguettebox
@@ -39,10 +42,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     'node_modules/baguettebox.js/dist/baguetteBox.min.js': 'js/baguetteBox.min.js'
   });
-  eleventyConfig.addPassthroughCopy({
-    "src/admin/config.yml": "admin/config.yml",
-    "src/admin/index.html": "admin/index.html"
-  });
+
 
   // Create css-clean CSS Minifier filter
   eleventyConfig.addFilter("cssmin", function (code) {
@@ -63,8 +63,8 @@ module.exports = (eleventyConfig) => {
     }
   });
 
-  // Imagenes footer
-  eleventyConfig.addPassthroughCopy({ "src/images-footer": "images-footer" });
+
+
 
 
   // Configure image in a template paired shortcode
