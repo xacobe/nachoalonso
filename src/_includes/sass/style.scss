@@ -198,3 +198,21 @@ h2, .h2 {
     color: white !important;
   }
 }
+
+// Bagüette Lightbox
+
+/* Estilos para el lightbox */
+.baguetteBox-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+  
+  /* Asegura que las miniaturas sean clickables */
+  .grid-item a {
+    cursor: zoom-in;
+  }
+  

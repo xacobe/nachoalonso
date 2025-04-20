@@ -28,6 +28,15 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/favicon_data");
+  // Copiar los assets de baguettebox
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/baguettebox.js/dist/baguetteBox.min.css': 'css/baguetteBox.min.css'
+  });
+
+  // Opcional: Copiar el JS si no usas bundler
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/baguettebox.js/dist/baguetteBox.min.js': 'js/baguetteBox.min.js'
+  });
 
   // Create css-clean CSS Minifier filter
   eleventyConfig.addFilter("cssmin", function (code) {

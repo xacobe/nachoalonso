@@ -17,6 +17,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_data/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon_data/favicon-16x16.png">
         <link rel="manifest" href="/favicon_data/site.webmanifest">
+        <link rel="stylesheet" href="/css/baguetteBox.min.css">
         {% set css %}
             {% include "css/style.css" %}
             {% include "css/reset.css" %}
@@ -81,5 +82,12 @@
   }
 });
         </script>
+        <script src="/js/baguetteBox.min.js"></script>
+        <script src="/js/lightbox.js"></script> <!-- Tu archivo con la inicialización -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  baguetteBox.run('.gallery');
+});
+</script>
     </body>
 </html>

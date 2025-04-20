@@ -1,16 +1,19 @@
-<ul class="grid-container">
+<ul class="grid-container gallery">
   {% for group in collections.gallery.slice(0, 60) | batch(5) %}
-    <li
-      class="grid-item"
-    >
+    <li class="grid-item">
       {% for image in group %}
-        <a href="{{ image.url }}" aria-label="Gallery image {{ image.data.title }}">
-         {% img {
-          src: image.data.src,
-          alt: image.data.alt,
-          className: "grid-image",
-          imgDir: image.data.imgDir
-        } %}
+        {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
+        <a 
+          href="images/{{ largeSrc }}" 
+          aria-label="Gallery image {{ image.data.title }}"
+          data-caption="{{ image.data.alt }}"
+        >
+          {% img {
+            src: image.data.src,
+            alt: image.data.alt,
+            className: "grid-image",
+            imgDir: image.data.imgDir
+          } %}
         </a>
       {% endfor %}
     </li>
