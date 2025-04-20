@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    <head>
-        {% metagen 
-            title=title,
-            desc=meta_desc,
-            url=url,
-            img=url + img,
-            img_alt=alt,
-            twitter_card_type=cardType,
-            twitter_handle=site.author.twitterHandle,
-            name=site.author.firstName + " " + site.author.lastName,
-            generator="Eleventy v2.0.1",
-            comments=true
-        %}
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_data/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_data/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_data/favicon-16x16.png">
-        <link rel="manifest" href="/favicon_data/site.webmanifest">
-        <link rel="stylesheet" href="/css/baguetteBox.min.css">
-        {% set css %}
-            {% include "css/style.css" %}
-            {% include "css/reset.css" %}
-        {% endset %}
-        <style>
-            {{ css | cssmin | safe }}
-        </style>
-    </head>
-    <body>
-            {% include "partials/header.njk" %}
-            {{ content | safe }}
-            {% include "partials/footer.njk" %}
-        <script src="/js/baguetteBox.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="/js/lightbox.js"></script> <!-- Tu archivo con la inicialización -->
-    </body>
+  <head>
+    {% metagen
+    title = title,
+    desc = meta_desc,
+    url = url,
+    img = url + img,
+    img_alt = alt,
+    twitter_card_type = cardType,
+    twitter_handle = site.author.twitterHandle,
+    name = site.author.firstName + " " + site.author.lastName,
+    generator = "Eleventy v2.0.1",
+    comments = true
+ %}
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_data/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_data/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_data/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_data/site.webmanifest">
+    <link rel="stylesheet" href="/css/baguetteBox.min.css">
+    {% set css %}
+    {% include "css/style.css" %}
+    {% include "css/reset.css" %}
+    {% endset %}
+    <style>
+      {{css | cssmin | safe}}
+    </style>
+  </head>
+
+  <body>
+    {% include "partials/header.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
+  
+    <script src="/js/baguetteBox.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="/js/lightbox.js"></script>
+
+  </body>
 </html>

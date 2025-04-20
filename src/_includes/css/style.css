@@ -1,4 +1,39 @@
 @charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fcfcfc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #212121;
+}
+
+h1, .h1 {
+  font-size: clamp(2.75rem, 8vw, 3.25rem);
+}
+
+h2, .h2 {
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
+}
+
 .grid-container {
   display: grid;
   background-color: white;
@@ -95,20 +130,6 @@
   animation-delay: 12s;
 }
 
-.page-title {
-  display: block;
-  padding-block-start: 1rem;
-  padding-inline: 1rem;
-  width: 8rem;
-  font-size: 1.5rem;
-  font-weight: bolder;
-  text-transform: uppercase;
-  color: white;
-  line-height: 1.1;
-  text-align: center;
-  text-decoration: none;
-}
-
 .baguetteBox-container {
   position: fixed;
   top: 0;
@@ -140,6 +161,20 @@
 
 #baguetteBox-overlay {
   background-color: white !important;
+}
+
+.page-title {
+  display: block;
+  padding-block-start: 1rem;
+  padding-inline: 1rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
 }
 
 .slide--content {
@@ -180,39 +215,23 @@
   text-decoration: none;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #fcfcfc;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
+/* 404 page styles */
+.four-oh-four {
+  margin: 0 auto;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 90ch;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow: hidden;
+  background: inherit;
+  min-height: 100vh;
 }
-
-h1, h2, h3, h4, h5 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #212121;
+.four-oh-four ul {
+  padding-left: 0;
 }
-
-h1, .h1 {
-  font-size: clamp(2.75rem, 8vw, 3.25rem);
-}
-
-h2, .h2 {
-  font-size: clamp(1.5rem, 5vw, 1.8rem);
+.four-oh-four ul li {
+  padding: 12px 14px;
+  margin: 10px auto;
 }
 
 .header {
@@ -232,25 +251,6 @@ h2, .h2 {
   bottom: 0;
   width: 100%;
   z-index: -2;
-}
-
-/* 404 page styles */
-.four-oh-four {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 90ch;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  overflow: hidden;
-  background: inherit;
-  min-height: 100vh;
-}
-.four-oh-four ul {
-  padding-left: 0;
-}
-.four-oh-four ul li {
-  padding: 12px 14px;
-  margin: 10px auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,40 @@
+// Bagüette Lightbox
+.baguetteBox-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+  
+  .baguetteBox-button {
+    background-color: transparent;
+    border-radius: 100%;
+  
+    &#close-button svg {
+      g {
+        stroke: black;
+        fill: white !important;
+        stroke-width: 6px !important;
+      }
+    }
+  
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+  
+      g {
+        stroke: white !important;
+      }
+    }
+  
+    #next-button,
+    #previous-button {
+      display: none;
+    }
+  }
+  
+  #baguetteBox-overlay {
+    background-color: white !important;
+  }
+  
