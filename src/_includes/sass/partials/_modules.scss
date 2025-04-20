@@ -54,8 +54,6 @@
 
 // Slider
 .slide--content {
-  position: relative;
-  /* Esto asegura que el contenido no se corte al moverse */
   overflow: hidden;
   /* Transición por defecto */
   transition: transform .5s ease-in-out;

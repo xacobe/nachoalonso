@@ -9,7 +9,6 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100dvh;
     background: $page-background;
     font-family: $system-font;
     font-size: 16px;
@@ -40,8 +39,4 @@ h2, .h2 {
     $pref-size: 5vw;
     $max-size: 1.8rem;
     font-size: clamp(1.5rem, 5vw, 1.8rem);
-}
-
-#main {
-  position: fixed;
 }
