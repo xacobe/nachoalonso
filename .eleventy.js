@@ -63,6 +63,10 @@ module.exports = (eleventyConfig) => {
     }
   });
 
+  // Imagenes footer
+  eleventyConfig.addPassthroughCopy({ "src/images-footer": "images-footer" });
+
+
   // Configure image in a template paired shortcode
   eleventyConfig.addPairedShortcode("image", (srcSet, src, alt, sizes = "(min-width: 400px) 33.3vw, 100vw") => {
     return `<img srcset="${srcSet}" src="${src}" alt="${alt}" sizes="${sizes}" />`;

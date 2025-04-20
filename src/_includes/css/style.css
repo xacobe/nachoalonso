@@ -185,9 +185,21 @@ h2, .h2 {
 }
 
 .slide--content.slid-up {
-  transform: translateY(-50%);
+  transform: translateY(-33.33%);
 }
 
+/* Horizonal: más columnas */
+@media (min-aspect-ratio: 5/2) {
+  .slide--content.slid-up {
+    transform: translateY(-50%);
+  }
+}
+/* Vertical: más filas */
+@media (max-aspect-ratio: 3/3.2) {
+  .slide--content.slid-up {
+    transform: translateY(-50%);
+  }
+}
 .slide--move-up {
   transition: all 1.5s ease-in-out;
 }
@@ -215,6 +227,70 @@ h2, .h2 {
   text-decoration: none;
 }
 
+.header {
+  height: 4rem;
+  display: flex;
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  z-index: 10;
+}
+.header a {
+  color: white !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #d6d6d6;
+  z-index: -2;
+  font-weight: lighter;
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  font-family: monospace;
+  padding: 2rem;
+  background-image: url("../images-footer/2.jpg");
+  background-image: url("../images-footer/4.jpg");
+  background-image: url("../images-footer/5.jpg");
+  background-image: url("../images-footer/6.jpg");
+  background-image: url("../images-footer/7.jpg");
+  background-image: url("../images-footer/10.jpg");
+  background-image: url("../images-footer/11.jpg");
+  background-image: url("../images-footer/12.jpg");
+  background-image: url("../images-footer/1.jpg");
+  background-image: url("../images-footer/3.jpg");
+  background-image: url("../images-footer/9.jpg");
+  background-image: url("../images-footer/8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-blend-mode: hard-light;
+  background-color: #393939;
+  border-top: solid 0.2rem white;
+  height: 33.33dvh;
+  /* Horizonal: más columnas */
+  /* Vertical: más filas */
+}
+@media (min-aspect-ratio: 5/2) {
+  .footer {
+    height: 50dvh;
+  }
+}
+@media (max-aspect-ratio: 3/3.2) {
+  .footer {
+    height: 50dvh;
+  }
+}
+.footer h2, .footer h3, .footer h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #d6d6d6;
+  font-size: 1.2rem;
+}
+.footer a {
+  color: white !important;
+}
+
 /* 404 page styles */
 .four-oh-four {
   margin: 0 auto;
@@ -232,25 +308,6 @@ h2, .h2 {
 .four-oh-four ul li {
   padding: 12px 14px;
   margin: 10px auto;
-}
-
-.header {
-  height: 4rem;
-  display: flex;
-  position: absolute;
-  color: #fff;
-  width: 100%;
-  z-index: 10;
-}
-.header a {
-  color: white !important;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  z-index: -2;
 }
 
 /*# sourceMappingURL=style.css.map */

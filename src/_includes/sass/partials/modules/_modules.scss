@@ -20,8 +20,22 @@
   will-change: transform; /* Optimización de rendimiento */
 }
 .slide--content.slid-up {
-  transform: translateY(-50%);
+  transform: translateY(-33.33%);
 }
+/* Horizonal: más columnas */
+@media (min-aspect-ratio: 5/2) {
+  .slide--content.slid-up {
+    transform: translateY(-50%);
+  }
+}
+/* Vertical: más filas */
+@media (max-aspect-ratio: 3/3.2) {
+  .slide--content.slid-up {
+    transform: translateY(-50%);
+  }
+}
+
+
 .slide--move-up {
   transition: all 1.5s ease-in-out;
 }
