@@ -19,6 +19,8 @@ Cloned from [https://github.com/tannerdolby/eleventy-photo-gallery](https://gith
 4. Build: `npm run build`
 5. Serve locally: `npm run start` or `npm run dev`
 
+    // "build": "npm-run-all build:*",
+    // "start": "npm-run-all watch:*",
 ## Usage
 Add images to a folder such as `images` in your project and then supply an array of image metadata objects in a global data file `_data/gallery.json`:
 

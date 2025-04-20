@@ -39,6 +39,10 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     'node_modules/baguettebox.js/dist/baguetteBox.min.js': 'js/baguetteBox.min.js'
   });
+  eleventyConfig.addPassthroughCopy({
+    "src/admin/config.yml": "admin/config.yml",
+    "src/admin/index.html": "admin/index.html"
+  });
 
   // Create css-clean CSS Minifier filter
   eleventyConfig.addFilter("cssmin", function (code) {

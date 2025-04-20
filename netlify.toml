@@ -1,6 +1,11 @@
 [build]
-    # Directory (relative to root of your repo) that contains the deploy-ready HTML files
-    publish = "_site"
-    
-    # Build command
-    command = "npm run build"
+  command = "npm run build"
+  publish = "_site"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[build.environment]
+  ELEVENTY_PRODUCTION = true

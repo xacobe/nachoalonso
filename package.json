@@ -4,8 +4,8 @@
   "description": "A photo gallery starter kit built with the static site generator Eleventy",
   "main": ".eleventy.js",
   "scripts": {
-    "build": "npm-run-all build:*",
-    "start": "npm-run-all watch:*",
+    "build": "eleventy",
+    "start": "eleventy --serve",
     "dev": "npm-run-all --parallel watch:*",
     "build:eleventy": "npx @11ty/eleventy",
     "watch:eleventy": "npx @11ty/eleventy --serve",

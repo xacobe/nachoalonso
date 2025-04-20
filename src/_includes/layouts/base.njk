@@ -31,10 +31,26 @@
     {% include "partials/header.njk" %}
     {{ content | safe }}
     {% include "partials/footer.njk" %}
-  
+
     <script src="/js/baguetteBox.min.js"></script>
     <script src="js/main.js"></script>
     <script src="/js/lightbox.js"></script>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window
+          .netlifyIdentity
+          .on("init", user => {
+            if (!user) {
+              window
+                .netlifyIdentity
+                .on("login", () => {
+                  document.location.href = "/admin/";
+                });
+            }
+          });
+      }
+    </script>
 
   </body>
 </html>
