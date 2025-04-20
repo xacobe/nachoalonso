@@ -549,22 +549,6 @@ main p {
 main h1, main h2, main h3, main h4, main h5, main h6 {
   margin-bottom: 24px;
 }
-main .gallery {
-  margin-inline: auto;
-  max-width: 40rem;
-}
-@media screen and (min-width: 972px) {
-  main .gallery {
-    max-width: 60rem;
-  }
-}
-main .gallery-header {
-  max-width: 1100px;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  font-size: 30px;
-}
 
 .skip-link {
   position: fixed;
@@ -637,31 +621,6 @@ h2, .h2 {
   margin-bottom: 0.75rem;
 }
 
-.about-me-content .about-socials {
-  padding-left: 30px;
-  margin-bottom: 24px;
-}
-
-.about-socials li {
-  margin: 0.75rem auto;
-  list-style: disc;
-}
-
-.about-me-content {
-  max-width: 80ch;
-  margin: 3rem auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.gt {
-  margin-left: 3px;
-}
-
-.lt {
-  margin-right: 3px;
-}
-
 .header {
   height: 4rem;
   display: flex;
@@ -674,7 +633,6 @@ h2, .h2 {
   color: white !important;
 }
 
-/* Estilos para el lightbox */
 .baguetteBox-container {
   position: fixed;
   top: 0;
@@ -684,9 +642,25 @@ h2, .h2 {
   z-index: 1000;
 }
 
-/* Asegura que las miniaturas sean clickables */
+#next-button, #previous-button {
+  display: none;
+}
+
+#baguetteBox-overlay {
+  background-color: white !important;
+}
+
+#close-button svg {
+  background-color: white !important;
+}
+#close-button svg g {
+  stroke: black !important;
+  fill: white !important;
+  stroke-width: 2px !important;
+}
+
 .grid-item a {
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
