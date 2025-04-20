@@ -149,6 +149,19 @@
   will-change: transform; /* Optimización de rendimiento */
 }
 
+.slide--content.slid-up {
+  transform: translateY(-50%);
+}
+
+.slide--move-up {
+  transition: all 1.5s ease-in-out;
+}
+
+.slid-up .slide--move-up {
+  transform: rotate(180deg);
+  transition: all 1.5s ease-in-out;
+}
+
 .btn-pill {
   display: flex;
   justify-content: center;

@@ -49,21 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Slider up
-const moveUpButton = document.querySelector('.slide--move-up');
-const slideContent = document.querySelector('.slide--content');
-let isSlidUp = false;
-
-moveUpButton.addEventListener('click', function() {
-  if (isSlidUp) {
-    // Volver a la posición original
-    slideContent.style.transform = 'translateY(0)';
-  } else {
-    // Mover hacia arriba el 50%
-    slideContent.style.transform = 'translateY(-50%)';
-  }
-  // Cambiar el estado
-  isSlidUp = !isSlidUp;
-
-  // Asegurar que la transición está activada
-  slideContent.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+document.querySelector('.slide--move-up').addEventListener('click', function() {
+  document.querySelector('.slide--content').classList.toggle('slid-up');
 });
