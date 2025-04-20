@@ -8,5 +8,4 @@
   status = 200
 
 [context.production.environment]
-  ELEVENTY_PRODUCTION = "true"  # String entre comillas
-  AUTH0_PROVIDER = "github"     # Proveedor GitHub
+  ELEVENTY_PRODUCTION = "true"  # ¡Ahora entre comillas!
