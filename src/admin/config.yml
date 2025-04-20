@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Tu rama principal
+  branch: master # Tu rama principal
 
 media_folder: "src/images" # Carpeta donde se guardarán las imágenes
 public_folder: "/images"  # Ruta pública
