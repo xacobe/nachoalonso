@@ -7,5 +7,5 @@
   to = "/admin/index.html"
   status = 200
 
-[build.environment]
-  ELEVENTY_PRODUCTION = true
+[context.production.environment]
+  ELEVENTY_PRODUCTION = "true"  # ¡Importante: como string entre comillas!
