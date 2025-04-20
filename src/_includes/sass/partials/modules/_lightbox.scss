@@ -28,13 +28,13 @@
       }
     }
   
-    #next-button,
-    #previous-button {
-      display: none;
-    }
+  }
+  #next-button,
+  #previous-button {
+    display: none;
   }
   
   #baguetteBox-overlay {
-    background-color: white !important;
+    background-color: hsl(0deg 0% 100% / 81%) !important;
   }
   

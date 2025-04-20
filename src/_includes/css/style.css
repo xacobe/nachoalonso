@@ -154,13 +154,14 @@ h2, .h2 {
 .baguetteBox-button:hover g {
   stroke: white !important;
 }
-.baguetteBox-button #next-button,
-.baguetteBox-button #previous-button {
+
+#next-button,
+#previous-button {
   display: none;
 }
 
 #baguetteBox-overlay {
-  background-color: white !important;
+  background-color: hsla(0deg, 0%, 100%, 0.81) !important;
 }
 
 .page-title {
