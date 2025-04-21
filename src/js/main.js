@@ -58,14 +58,21 @@ document.querySelector('.slide--move-up').addEventListener('click', function() {
 //  That sound
 document.addEventListener('DOMContentLoaded', function() {
   const gearSound = document.getElementById('gearSound');
-  const toggleBtn = document.getElementById('toggleBtn'); // Assuming 'toggleBtn' is the intended ID
+  const toggleBtn = document.getElementById('toggleBtn');
 
-  if (toggleBtn) { // Check if toggleBtn is not null
-    toggleBtn.addEventListener('click', () => {
-      // Reproducir sonido del engranaje
-      playGearSound();
+  // Detección moderna de iOS (sin usar platform)
+  const isIOS = () => {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+           (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  };
+
+  if (toggleBtn) {
+    const eventType = isIOS() ? 'touchstart' : 'click';
+    
+    toggleBtn.addEventListener(eventType, (e) => {
+      if (isIOS()) e.preventDefault();
       
-      // Activar feedback háptico si está disponible
+      playGearSound();
       triggerHapticFeedback();
     });
   } else {
@@ -73,7 +80,58 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function playGearSound() {
-    gearSound.currentTime = 0; // Rebobinar para permitir repetición
-    gearSound.play().catch(e => console.log("Error al reproducir sonido:", e));
+    if (isIOS()) {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().then(() => {
+          gearSound.currentTime = 0;
+          gearSound.play().catch(e => console.log("iOS audio error:", e));
+        });
+      } else {
+        gearSound.currentTime = 0;
+        gearSound.play().catch(e => console.log("iOS audio error:", e));
+      }
+    } else {
+      gearSound.currentTime = 0;
+      gearSound.play().catch(e => console.log("Audio error:", e));
+    }
+  }
+
+  function triggerHapticFeedback() {
+    if (isIOS()) {
+      // Opción 1: API de selección táctil (mejor soporte en iOS)
+      if (window.Touch && window.Touch.prototype.createTouch) {
+        const touch = new Touch({
+          identifier: Date.now(),
+          target: toggleBtn,
+          clientX: 0,
+          clientY: 0,
+          radiusX: 10,
+          radiusY: 10,
+          rotationAngle: 0,
+          force: 1
+        });
+        const touchEvent = new TouchEvent('touchstart', {
+          touches: [touch],
+          bubbles: true
+        });
+        toggleBtn.dispatchEvent(touchEvent);
+      }
+      // Opción 2: API de vibración (solo algunos iOS)
+      else if ('vibrate' in navigator) {
+        navigator.vibrate(50);
+      }
+      // Opción 3: Feedback visual
+      else {
+        toggleBtn.classList.add('haptic-feedback');
+        setTimeout(() => {
+          toggleBtn.classList.remove('haptic-feedback');
+        }, 100);
+      }
+    } else {
+      if ('vibrate' in navigator) {
+        navigator.vibrate([50, 20, 30]);
+      }
+    }
   }
 });

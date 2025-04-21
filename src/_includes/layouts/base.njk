@@ -46,7 +46,10 @@
     {{ content | safe }}
     {% include "partials/footer.njk" %}
 
-    <audio id="gearSound" src="/sounds/gear.ogg" preload="auto"></audio>
+
+    <audio id="gearSound" preload="auto" playsinline webkit-playsinline>
+      <source src="/sounds/gear.mp3" type="audio/mpeg">
+    </audio>
 
 
     <script src="/js/baguetteBox.min.js"></script>
