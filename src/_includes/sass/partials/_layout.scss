@@ -27,24 +27,27 @@
   padding: 2rem;
   
   
-  // background-image: url("css/images/2.jpg");
-  // background-image: url("css/images/4.jpg");
-  // background-image: url("css/images/5.jpg");
-  // background-image: url("css/images/6.jpg");
-  // background-image: url("css/images/7.jpg");
-  // background-image: url("css/images/10.jpg");
-  // background-image: url("css/images/11.jpg");
-  // background-image: url("css/images/12.jpg");
-  // background-image: url("css/images/1.jpg");
-  // background-image: url("css/images/3.jpg");
-  // background-image: url("css/images/9.jpg");
-  background-image: url("/css/images/8.jpeg");
+  background-image: url("css/images/2.jpg");
+  background-image: url("css/images/4.jpg");
+  background-image: url("css/images/5.jpg");
+  background-image: url("css/images/6.jpg");
+  background-image: url("css/images/7.jpg");
+  background-image: url("css/images/10.jpg");
+  background-image: url("css/images/11.jpg");
+  background-image: url("css/images/12.jpg");
+  background-image: url("css/images/1.jpg");
+  background-image: url("css/images/3.jpg");
+  background-image: url("css/images/9.jpg");
+  background-image: url("/css/images/8.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   background-blend-mode: hard-light;
   background-color: #393939;
   border-top: solid .2rem white;
+
+    /* Animación de latido */
+    animation: heartbeat 31s infinite;
 
   height: 33.33dvh;
   // transition: height 0.5s ease-in-out;
@@ -65,5 +68,32 @@
 
   a {
     color: white !important;
+  }
+}
+
+
+/* Definición de la animación */
+@keyframes heartbeat {
+  0%, 100% {
+    background-image: url("css/images/1.jpg");
+    animation-timing-function: ease-out;
+  }
+  15% {
+    background-image: url("css/images/3.jpg");
+    animation-timing-function: ease-in;
+  }
+  30% {
+    background-image: url("css/images/5.jpg");
+  }
+  45% {
+    background-image: url("css/images/7.jpg");
+  }
+  60% {
+    background-image: url("css/images/9.jpg");
+    animation-timing-function: ease-out;
+  }
+  75% {
+    background-image: url("css/images/11.jpg");
+    animation-timing-function: ease-in;
   }
 }

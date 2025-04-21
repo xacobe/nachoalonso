@@ -144,12 +144,13 @@ h2, .h2 {
   border-radius: 100%;
 }
 .baguetteBox-button#close-button svg g {
-  stroke: black;
-  fill: white !important;
+  stroke: #ffffff;
+  fill: #fff !important;
   stroke-width: 6px !important;
+  filter: drop-shadow(1px 1px 0px #000);
 }
 .baguetteBox-button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
 }
 .baguetteBox-button:hover g {
   stroke: white !important;
@@ -251,13 +252,26 @@ h2, .h2 {
   letter-spacing: 0.8px;
   font-family: monospace;
   padding: 2rem;
-  background-image: url("/css/images/8.jpeg");
+  background-image: url("css/images/2.jpg");
+  background-image: url("css/images/4.jpg");
+  background-image: url("css/images/5.jpg");
+  background-image: url("css/images/6.jpg");
+  background-image: url("css/images/7.jpg");
+  background-image: url("css/images/10.jpg");
+  background-image: url("css/images/11.jpg");
+  background-image: url("css/images/12.jpg");
+  background-image: url("css/images/1.jpg");
+  background-image: url("css/images/3.jpg");
+  background-image: url("css/images/9.jpg");
+  background-image: url("/css/images/8.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   background-blend-mode: hard-light;
   background-color: #393939;
   border-top: solid 0.2rem white;
+  /* Animación de latido */
+  animation: heartbeat 31s infinite;
   height: 33.33dvh;
   /* Horizonal: más columnas */
   /* Vertical: más filas */
@@ -281,6 +295,31 @@ h2, .h2 {
   color: white !important;
 }
 
+/* Definición de la animación */
+@keyframes heartbeat {
+  0%, 100% {
+    background-image: url("css/images/1.jpg");
+    animation-timing-function: ease-out;
+  }
+  15% {
+    background-image: url("css/images/3.jpg");
+    animation-timing-function: ease-in;
+  }
+  30% {
+    background-image: url("css/images/5.jpg");
+  }
+  45% {
+    background-image: url("css/images/7.jpg");
+  }
+  60% {
+    background-image: url("css/images/9.jpg");
+    animation-timing-function: ease-out;
+  }
+  75% {
+    background-image: url("css/images/11.jpg");
+    animation-timing-function: ease-in;
+  }
+}
 /* 404 page styles */
 .four-oh-four {
   margin: 0 auto;

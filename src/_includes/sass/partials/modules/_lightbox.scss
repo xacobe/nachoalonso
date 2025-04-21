@@ -14,14 +14,15 @@
   
     &#close-button svg {
       g {
-        stroke: black;
-        fill: white !important;
+        stroke: #ffffff;
+        fill: #fff !important;
         stroke-width: 6px !important;
+        filter: drop-shadow(1px 1px 0px #000);
       }
     }
   
     &:hover {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: transparent;
   
       g {
         stroke: white !important;
