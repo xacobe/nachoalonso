@@ -143,6 +143,12 @@ h2, .h2 {
   background-color: transparent;
   border-radius: 100%;
 }
+.baguetteBox-button#close-button svg {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  left: inherit;
+}
 .baguetteBox-button#close-button svg g {
   stroke: #ffffff;
   fill: #fff !important;
@@ -276,6 +282,20 @@ h2, .h2 {
   /* Horizonal: más columnas */
   /* Vertical: más filas */
 }
+.footer h2, .footer h3, .footer h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #d6d6d6;
+  font-size: 1.2rem;
+}
+.footer a {
+  color: white !important;
+}
+.footer p {
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 0.5rem;
+  margin-block: 0.5rem;
+  width: fix-content;
+}
 @media (min-aspect-ratio: 5/2) {
   .footer {
     height: 50dvh;
@@ -285,14 +305,6 @@ h2, .h2 {
   .footer {
     height: 50dvh;
   }
-}
-.footer h2, .footer h3, .footer h4 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #d6d6d6;
-  font-size: 1.2rem;
-}
-.footer a {
-  color: white !important;
 }
 
 /* Definición de la animación */

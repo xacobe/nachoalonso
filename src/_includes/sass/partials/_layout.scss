@@ -25,6 +25,22 @@
   letter-spacing: .8px;
   font-family: monospace;
   padding: 2rem;
+
+  h2, h3, h4 {
+    font-family: $system-font;
+    color: #d6d6d6;
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: white !important;
+  }
+  p {
+    background-color: rgba(0, 0, 0, .35);
+    padding: .5rem;
+    margin-block: 0.5rem;
+    width: fix-content;
+  }
   
   
   background-image: url("css/images/2.jpg");
@@ -58,16 +74,6 @@
   /* Vertical: más filas */
   @media (max-aspect-ratio: 3/3.2) {
     height: 50dvh;
-  }
-
-  h2, h3, h4 {
-    font-family: $system-font;
-    color: #d6d6d6;
-    font-size: 1.2rem;
-  }
-
-  a {
-    color: white !important;
   }
 }
 
