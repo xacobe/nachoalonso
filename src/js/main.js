@@ -60,78 +60,51 @@ document.addEventListener('DOMContentLoaded', function() {
   const gearSound = document.getElementById('gearSound');
   const toggleBtn = document.getElementById('toggleBtn');
 
-  // Detección moderna de iOS (sin usar platform)
-  const isIOS = () => {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-           (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
-  };
-
-  if (toggleBtn) {
-    const eventType = isIOS() ? 'touchstart' : 'click';
+  // 1. Configuración inicial del audio
+  function setupAudio() {
+    // Esto es esencial para iOS
+    gearSound.setAttribute('playsinline', '');
+    gearSound.setAttribute('webkit-playsinline', '');
+    gearSound.preload = 'auto';
     
-    toggleBtn.addEventListener(eventType, (e) => {
-      if (isIOS()) e.preventDefault();
-      
-      playGearSound();
-      triggerHapticFeedback();
-    });
-  } else {
-    console.error("Element with ID 'toggleBtn' not found.");
+    // Precargar el sonido en iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      gearSound.load();
+    }
   }
 
+  // 2. Función mejorada para reproducir sonido
   function playGearSound() {
-    if (isIOS()) {
+    // Reiniciar el audio si ya se estaba reproduciendo
+    gearSound.currentTime = 0;
+    
+    // Solución especial para iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      // Crear contexto de audio (requerido en iOS)
       const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      
+      // Algunos iOS requieren esto para habilitar el audio
       if (audioContext.state === 'suspended') {
         audioContext.resume().then(() => {
-          gearSound.currentTime = 0;
-          gearSound.play().catch(e => console.log("iOS audio error:", e));
+          gearSound.play().catch(e => console.log("Error en iOS:", e));
         });
       } else {
-        gearSound.currentTime = 0;
-        gearSound.play().catch(e => console.log("iOS audio error:", e));
+        gearSound.play().catch(e => console.log("Error en iOS:", e));
       }
-    } else {
-      gearSound.currentTime = 0;
-      gearSound.play().catch(e => console.log("Audio error:", e));
+    } 
+    // Para otros dispositivos
+    else {
+      gearSound.play().catch(e => console.log("Error de audio:", e));
     }
   }
 
-  function triggerHapticFeedback() {
-    if (isIOS()) {
-      // Opción 1: API de selección táctil (mejor soporte en iOS)
-      if (window.Touch && window.Touch.prototype.createTouch) {
-        const touch = new Touch({
-          identifier: Date.now(),
-          target: toggleBtn,
-          clientX: 0,
-          clientY: 0,
-          radiusX: 10,
-          radiusY: 10,
-          rotationAngle: 0,
-          force: 1
-        });
-        const touchEvent = new TouchEvent('touchstart', {
-          touches: [touch],
-          bubbles: true
-        });
-        toggleBtn.dispatchEvent(touchEvent);
-      }
-      // Opción 2: API de vibración (solo algunos iOS)
-      else if ('vibrate' in navigator) {
-        navigator.vibrate(50);
-      }
-      // Opción 3: Feedback visual
-      else {
-        toggleBtn.classList.add('haptic-feedback');
-        setTimeout(() => {
-          toggleBtn.classList.remove('haptic-feedback');
-        }, 100);
-      }
-    } else {
-      if ('vibrate' in navigator) {
-        navigator.vibrate([50, 20, 30]);
-      }
-    }
+  // 3. Configurar el audio al cargar
+  setupAudio();
+
+  // 4. Manejador de eventos para el botón
+  if (toggleBtn) {
+    // Usamos 'click' para desktop y 'touchstart' para móviles
+    toggleBtn.addEventListener('click', playGearSound);
+    toggleBtn.addEventListener('touchstart', playGearSound);
   }
 });

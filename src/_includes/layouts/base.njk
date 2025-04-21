@@ -46,6 +46,11 @@
     {{ content | safe }}
     {% include "partials/footer.njk" %}
 
+    <audio id="gearSound">
+      <source src="/sounds/gear.mp3" type="audio/mpeg">
+      <source src="/sounds/gear.ogg" type="audio/ogg">
+    </audio>
+
 
     <audio id="gearSound" preload="auto" playsinline webkit-playsinline>
       <source src="/sounds/gear.mp3" type="audio/mpeg">
