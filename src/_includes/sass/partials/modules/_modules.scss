@@ -16,7 +16,7 @@
 .slide--content {
   overflow: hidden;
   /* Transición por defecto */
-  transition: transform .5s ease-in-out;
+  transition: transform 1s ease-in-out;
   will-change: transform; /* Optimización de rendimiento */
 }
 .slide--content.slid-up {

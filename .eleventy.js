@@ -28,6 +28,7 @@ module.exports = (eleventyConfig) => {
     
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/photos");
+  eleventyConfig.addPassthroughCopy("./src/sounds");
   eleventyConfig.addPassthroughCopy("./src/css");
   // eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });

@@ -52,3 +52,28 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelector('.slide--move-up').addEventListener('click', function() {
   document.querySelector('.slide--content').classList.toggle('slid-up');
 });
+
+
+
+//  That sound
+document.addEventListener('DOMContentLoaded', function() {
+  const gearSound = document.getElementById('gearSound');
+  const toggleBtn = document.getElementById('toggleBtn'); // Assuming 'toggleBtn' is the intended ID
+
+  if (toggleBtn) { // Check if toggleBtn is not null
+    toggleBtn.addEventListener('click', () => {
+      // Reproducir sonido del engranaje
+      playGearSound();
+      
+      // Activar feedback háptico si está disponible
+      triggerHapticFeedback();
+    });
+  } else {
+    console.error("Element with ID 'toggleBtn' not found.");
+  }
+
+  function playGearSound() {
+    gearSound.currentTime = 0; // Rebobinar para permitir repetición
+    gearSound.play().catch(e => console.log("Error al reproducir sonido:", e));
+  }
+});
