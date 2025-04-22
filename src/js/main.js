@@ -48,63 +48,55 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-// Slider up
-document.querySelector('.slide--move-up').addEventListener('click', function() {
-  document.querySelector('.slide--content').classList.toggle('slid-up');
-});
 
-
-
-//  That sound
-document.addEventListener('DOMContentLoaded', function() {
-  const gearSound = document.getElementById('gearSound');
-  const toggleBtn = document.getElementById('toggleBtn');
-
-  // 1. Configuración inicial del audio
-  function setupAudio() {
-    // Esto es esencial para iOS
-    gearSound.setAttribute('playsinline', '');
-    gearSound.setAttribute('webkit-playsinline', '');
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn       = document.querySelector('.slide--move-up');
+    const content   = document.querySelector('.slide--content');
+    const gearSound = document.getElementById('gearSound');
+    let   audioCtx;      // mantendremos un solo contexto
+    let   contextReady = false;
+  
+    // Setup inicial
+    gearSound.setAttribute('playsinline','');
+    gearSound.setAttribute('webkit-playsinline','');
     gearSound.preload = 'auto';
-    
-    // Precargar el sonido en iOS
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+    if (/iP(ad|hone|od)/.test(navigator.userAgent)) {
       gearSound.load();
     }
-  }
-
-  // 2. Función mejorada para reproducir sonido
-  function playGearSound() {
-    // Reiniciar el audio si ya se estaba reproduciendo
-    gearSound.currentTime = 0;
-    
-    // Solución especial para iOS
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-      // Crear contexto de audio (requerido en iOS)
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      
-      // Algunos iOS requieren esto para habilitar el audio
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-          gearSound.play().catch(e => console.log("Error en iOS:", e));
-        });
-      } else {
-        gearSound.play().catch(e => console.log("Error en iOS:", e));
+  
+    // Función única de play, con reintento y un solo ctx
+    function playSoundFragment() {
+      gearSound.currentTime = 0;
+  
+      if (/iP(ad|hone|od)/.test(navigator.userAgent)) {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          return audioCtx.resume()
+            .then(() => gearSound.play())
+            .catch(e => console.warn('Audio iOS falló:', e));
+        }
       }
-    } 
-    // Para otros dispositivos
-    else {
-      gearSound.play().catch(e => console.log("Error de audio:", e));
+      return gearSound.play()
+        .catch(e => console.warn('Audio falló:', e));
     }
-  }
-
-  // 3. Configurar el audio al cargar
-  setupAudio();
-
-  // 4. Manejador de eventos para el botón
-  if (toggleBtn) {
-    // Usamos 'click' para desktop y 'touchstart' para móviles
-    toggleBtn.addEventListener('click', playGearSound);
-    toggleBtn.addEventListener('touchstart', playGearSound);
-  }
-});
+  
+    // Listener que hace toggle + sonido en la misma interacción
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+  
+        content.classList.toggle('slid-up');
+  
+        playSoundFragment().then(() => {
+          contextReady = true;
+        }).catch(() => {
+          // Si falla la primera vez, dejamos que el siguiente click vuelva a intentar
+          contextReady = false;
+        });
+      });
+    }
+  });
+  
