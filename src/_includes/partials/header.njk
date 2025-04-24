@@ -1,4 +1,7 @@
 {% set navigation = collections.all | eleventyNavigation %}
 <header class="header">
-        <a class="page-title" href="/">{{ site.author.firstName }} {{ site.author.lastName }}</a>
+        <a class="page-title" href="/">
+        <span class="first_name">{{ site.author.firstName }}</span>
+        <span class="surname">{{ site.author.lastName }}</span>
+        </a>
 </header>
