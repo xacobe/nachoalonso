@@ -140,7 +140,7 @@ h2, .h2 {
 }
 
 .baguetteBox-button {
-  background-color: transparent;
+  background-color: transparent !important;
   border-radius: 100%;
 }
 .baguetteBox-button#close-button svg g {

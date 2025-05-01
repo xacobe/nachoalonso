@@ -1,16 +1,8 @@
 @use "../vars/" as *;
 
 .header {
-  height: 4rem;
-  display: flex;
   position: absolute;
-  color: #fff;
-  width: 100%;
   z-index: 10;
-
-  a {
-    color: white !important;
-  }
 }
 
 
