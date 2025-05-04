@@ -33,6 +33,13 @@
 }
 /* Vertical: más filas */
 @media (max-aspect-ratio: 3/3.2) {
+  .header {
+    width: 100%;
+
+    .page-title {
+      margin-inline: auto;
+    }
+  }
   .slide--content.slid-up {
     transform: translateY(-50%);
   }

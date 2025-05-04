@@ -207,6 +207,13 @@ h2, .h2 {
 }
 /* Vertical: más filas */
 @media (max-aspect-ratio: 3/3.2) {
+  .header {
+    width: 100%;
+  }
+  .header .page-title {
+    margin-inline: auto;
+    transition: all 1.5s ease-in-out;
+  }
   .slide--content.slid-up {
     transform: translateY(-50%);
   }
