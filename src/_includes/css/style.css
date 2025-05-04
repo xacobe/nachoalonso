@@ -212,7 +212,6 @@ h2, .h2 {
   }
   .header .page-title {
     margin-inline: auto;
-    transition: all 1.5s ease-in-out;
   }
   .slide--content.slid-up {
     transform: translateY(-50%);
@@ -231,7 +230,7 @@ h2, .h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ca321a;
+  background-color: transparent;
   color: white;
   position: absolute;
   right: 0;
