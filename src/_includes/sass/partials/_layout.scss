@@ -18,6 +18,10 @@
   font-family: monospace;
   padding: 2rem;
 
+  // por mientras probamos el video ocultamos el efeccto de las fotos, borrar si no.
+  background-image: none !important;
+  background-color: transparent !important;
+
   h2, h3, h4 {
     font-family: $system-font;
     color: #d6d6d6;
