@@ -19,7 +19,7 @@ module.exports = (eleventyConfig) => {
   markdownTemplateEngine: "njk";
 
   eleventyConfig.addCollection("gallery", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/gallery/*.md");
+    return collectionApi.getFilteredByGlob("src/gallery/**/*.md");
   });
 
   // Perform manual passthrough file copy to include directories in the build output _site
