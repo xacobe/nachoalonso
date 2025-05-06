@@ -46,6 +46,10 @@
     {{ content | safe }}
     {% include "partials/footer.njk" %}
 
+    <video autoplay muted loop id="bg-video">
+      <source src="videos/bg-street-01.mp4" type="video/mp4">
+    </video>
+
     <audio id="gearSound">
       <source src="/sounds/gear.mp3" type="audio/mpeg">
       <source src="/sounds/gear.ogg" type="audio/ogg">

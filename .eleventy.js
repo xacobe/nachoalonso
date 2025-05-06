@@ -28,6 +28,7 @@ module.exports = (eleventyConfig) => {
     
   eleventyConfig.addPassthroughCopy("src/images/**/*.{jpg,jpeg,png,gif,webp,svg}");
   eleventyConfig.addPassthroughCopy("./src/photos");
+  eleventyConfig.addPassthroughCopy("./src/videos");
   eleventyConfig.addPassthroughCopy("./src/sounds");
   eleventyConfig.addPassthroughCopy("./src/css");
   // eleventyConfig.addPassthroughCopy("./src/js");

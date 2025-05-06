@@ -18,8 +18,9 @@
 // Slider
 .slide--content {
   overflow: hidden;
+  border-block: solid white 2px;
   /* Transición por defecto */
-  transition: transform 1s ease-in-out;
+  transition: transform .5s ease-in;
   will-change: transform; /* Optimización de rendimiento */
 }
 .slide--content.slid-up {
@@ -70,4 +71,11 @@
   border-radius: 100% 100%;
   font-size: 1rem;
   text-decoration: none;
+}
+
+#bg-video {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: -2;
 }
