@@ -18,10 +18,8 @@
       right: 1rem;
       left: inherit;
       g {
-        stroke: #ffffff;
-        fill: #fff !important;
-        stroke-width: 6px !important;
-        filter: drop-shadow(1px 1px 0px #000);
+        stroke: black;
+        stroke-width: 2px !important;
       }
     }
   
@@ -41,5 +39,7 @@
   
   #baguetteBox-overlay {
     background-color: hsl(0deg 0% 100% / 81%) !important;
+    background-image: url("../css/images/bg-lightbox.jpg");
+    background-size: cover;
+    // background-blend-mode: hard-light;
   }
-  

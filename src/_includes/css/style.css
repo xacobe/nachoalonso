@@ -150,10 +150,8 @@ h2, .h2 {
   left: inherit;
 }
 .baguetteBox-button#close-button svg g {
-  stroke: #ffffff;
-  fill: #fff !important;
-  stroke-width: 6px !important;
-  filter: drop-shadow(1px 1px 0px #000);
+  stroke: black;
+  stroke-width: 2px !important;
 }
 .baguetteBox-button:hover {
   background-color: transparent;
@@ -169,6 +167,8 @@ h2, .h2 {
 
 #baguetteBox-overlay {
   background-color: hsla(0deg, 0%, 100%, 0.81) !important;
+  background-image: url("../css/images/bg-lightbox.jpg");
+  background-size: cover;
 }
 
 .page-title {

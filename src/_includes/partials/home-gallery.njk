@@ -3,20 +3,21 @@
   {% for group in collections.gallery.slice(0, 36) | batch(3) %}
     <li class="grid-item">
       {% for image in group %}
-        {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
-        <a 
-          href="images/{{ largeSrc }}" 
-          aria-label="Gallery image {{ image.data.title }}"
-          data-caption="{{ image.data.alt }}"
-        >
-          {% img {
-            src: image.data.src,
-            alt: image.data.alt,
-            className: "grid-image",
-            imgDir: image.data.imgDir
-          } %}
-        </a>
-      {% endfor %}
+  {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
+  {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
+  <a 
+    href="/images/{{ subfolder }}/{{ largeSrc }}" 
+    aria-label="Gallery image {{ image.data.title }}"
+    data-caption="{{ image.data.alt }}"
+  >
+    {% img {
+      src: image.data.src,
+      alt: image.data.alt,
+      className: "grid-image",
+      imgDir: image.data.imgDir
+    } %}
+  </a>
+{% endfor %}
     </li>
   {% endfor %}
   <a id="toggleBtn" href="#" class="btn-pill slide--move-up">
