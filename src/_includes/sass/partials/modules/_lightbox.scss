@@ -47,18 +47,18 @@
     background-blend-mode:difference;
     filter: invert(1);
   }
-#baguetteBox-slider .full-image 
-figcaption {
- display: flex;
- flex-direction: column;
- align-items: flex-end;
- color: black;
- background-color: transparent;
- font-family: monospace;
- font-size: 1.2rem;
- text-transform: capitalize;
- padding: 1rem;
+#baguetteBox-slider .full-image figcaption {
+    display: inline-flex;
+    color: #666;
+    background-color: transparent;
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    padding: 1rem;
+    justify-content: center;
   a {
     color: black;
+    padding-inline-end: 1rem;
+    text-underline-offset: 0.2rem;
   }
 }
