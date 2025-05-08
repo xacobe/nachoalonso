@@ -25,20 +25,6 @@
     <style>
       {{css | cssmin | safe}}
     </style>
-
-    <!-- Precarga de imágenes para la animación del footer -->
-  <link rel="preload" href="/css/images/1.jpg" as="image">
-  <link rel="preload" href="/css/images/2.jpg" as="image">
-  <link rel="preload" href="/css/images/3.jpg" as="image">
-  <link rel="preload" href="/css/images/4.jpg" as="image">
-  <link rel="preload" href="/css/images/5.jpg" as="image">
-  <link rel="preload" href="/css/images/6.jpg" as="image">
-  <link rel="preload" href="/css/images/7.jpg" as="image">
-  <link rel="preload" href="/css/images/8.jpg" as="image">
-  <link rel="preload" href="/css/images/9.jpg" as="image">
-  <link rel="preload" href="/css/images/10.jpg" as="image">
-  <link rel="preload" href="/css/images/11.jpg" as="image">
-  <link rel="preload" href="/css/images/12.jpg" as="image">
   </head>
 
   <body>
@@ -47,22 +33,11 @@
     {% include "partials/footer.njk" %}
 
     <video autoplay muted loop id="bg-video">
-      <source src="videos/bg-street-01.mp4" type="video/mp4">
+      <source src="/videos/bg-street-01.mp4" type="video/mp4">
     </video>
 
-    <audio id="gearSound">
-      <source src="/sounds/gear.mp3" type="audio/mpeg">
-      <source src="/sounds/gear.ogg" type="audio/ogg">
-    </audio>
-
-
-    <audio id="gearSound" preload="auto" playsinline webkit-playsinline>
-      <source src="/sounds/gear.mp3" type="audio/mpeg">
-    </audio>
-
-
     <script src="/js/baguetteBox.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/lightbox.js"></script>
 
 

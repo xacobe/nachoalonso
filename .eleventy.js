@@ -22,6 +22,15 @@ module.exports = (eleventyConfig) => {
     return collectionApi.getFilteredByGlob("src/gallery/**/*.md");
   });
 
+  // Nueva colección solo para ensayos
+eleventyConfig.addCollection("ensayo", function(collectionApi) {
+  return collectionApi.getFilteredByGlob("src/gallery/ensayo/*.md");
+});
+
+eleventyConfig.addCollection("francia", function(collectionApi) {
+  return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
+});
+
   // Perform manual passthrough file copy to include directories in the build output _site
     // Imagenes CSS
   eleventyConfig.addPassthroughCopy("src/_includes/css/images");
@@ -50,6 +59,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
+  
 
   // Create terser JS Minifier async filter (Nunjucks)
   eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (

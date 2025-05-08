@@ -79,3 +79,18 @@
   bottom: 0;
   z-index: -3;
 }
+
+.grid-item-fake {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+
+  a {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    color: black;
+  } 
+}

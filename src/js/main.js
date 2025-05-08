@@ -53,49 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', () => {
     const btn       = document.querySelector('.slide--move-up');
     const content   = document.querySelector('.slide--content');
-    const gearSound = document.getElementById('gearSound');
-    let   audioCtx;      // mantendremos un solo contexto
-    let   contextReady = false;
-  
-    // Setup inicial
-    gearSound.setAttribute('playsinline','');
-    gearSound.setAttribute('webkit-playsinline','');
-    gearSound.preload = 'auto';
-    if (/iP(ad|hone|od)/.test(navigator.userAgent)) {
-      gearSound.load();
-    }
   
     // Función única de play, con reintento y un solo ctx
-    function playSoundFragment() {
-      gearSound.currentTime = 0;
-  
-      if (/iP(ad|hone|od)/.test(navigator.userAgent)) {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext||window.webkitAudioContext)();
-        }
-        if (audioCtx.state === 'suspended') {
-          return audioCtx.resume()
-            .then(() => gearSound.play())
-            .catch(e => console.warn('Audio iOS falló:', e));
-        }
-      }
-      return gearSound.play()
-        .catch(e => console.warn('Audio falló:', e));
-    }
   
     // Listener que hace toggle + sonido en la misma interacción
     if (btn) {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-  
         content.classList.toggle('slid-up');
-  
-        playSoundFragment().then(() => {
-          contextReady = true;
-        }).catch(() => {
-          // Si falla la primera vez, dejamos que el siguiente click vuelva a intentar
-          contextReady = false;
-        });
+
       });
     }
   });

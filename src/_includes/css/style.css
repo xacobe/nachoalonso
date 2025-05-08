@@ -171,6 +171,26 @@ h2, .h2 {
   background-size: cover;
 }
 
+:has(.bg-dark) {
+  background-blend-mode: difference;
+  filter: invert(1);
+}
+
+#baguetteBox-slider .full-image figcaption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: black;
+  background-color: transparent;
+  font-family: monospace;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding: 1rem;
+}
+#baguetteBox-slider .full-image figcaption a {
+  color: black;
+}
+
 .page-title {
   display: block;
   padding-block-start: 1rem;
@@ -252,6 +272,20 @@ h2, .h2 {
   z-index: -3;
 }
 
+.grid-item-fake {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+.grid-item-fake a {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  color: black;
+}
+
 .header {
   position: absolute;
   z-index: 10;
@@ -268,28 +302,7 @@ h2, .h2 {
   letter-spacing: 0.8px;
   font-family: monospace;
   padding: 2rem;
-  background-image: none !important;
   background-color: transparent !important;
-  background-image: url("css/images/2.jpg");
-  background-image: url("css/images/4.jpg");
-  background-image: url("css/images/5.jpg");
-  background-image: url("css/images/6.jpg");
-  background-image: url("css/images/7.jpg");
-  background-image: url("css/images/10.jpg");
-  background-image: url("css/images/11.jpg");
-  background-image: url("css/images/12.jpg");
-  background-image: url("css/images/1.jpg");
-  background-image: url("css/images/3.jpg");
-  background-image: url("css/images/9.jpg");
-  background-image: url("/css/images/8.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-blend-mode: hard-light;
-  background-color: #393939;
-  border-top: solid 0.2rem white;
-  /* Animación de latido */
-  animation: heartbeat 31s infinite;
   height: 33.33dvh;
   /* Horizonal: más columnas */
   /* Vertical: más filas */
@@ -319,31 +332,6 @@ h2, .h2 {
   }
 }
 
-/* Definición de la animación */
-@keyframes heartbeat {
-  0%, 100% {
-    background-image: url("css/images/1.jpg");
-    animation-timing-function: ease-out;
-  }
-  15% {
-    background-image: url("css/images/3.jpg");
-    animation-timing-function: ease-in;
-  }
-  30% {
-    background-image: url("css/images/5.jpg");
-  }
-  45% {
-    background-image: url("css/images/7.jpg");
-  }
-  60% {
-    background-image: url("css/images/9.jpg");
-    animation-timing-function: ease-out;
-  }
-  75% {
-    background-image: url("css/images/11.jpg");
-    animation-timing-function: ease-in;
-  }
-}
 /* 404 page styles */
 .four-oh-four {
   margin: 0 auto;

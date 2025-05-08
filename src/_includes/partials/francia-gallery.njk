@@ -1,17 +1,15 @@
-<ul class="grid-container gallery slide--content">
-  {# {% for group in collections.gallery.slice(0, 60) | batch(5) %} #}
-  {% for group in collections.gallery.slice(0, 48) | batch(4) %}
+<ul class="grid-container francia slide--content">
+  {# {% for group in collections.francia.slice(0, 60) | batch(5) %} #}
+  {% for group in collections.francia.slice(0, 48) | batch(4) %}
     <li class="grid-item">
       {% for image in group %}
   {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
   {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
   <a 
     href="/images/{{ subfolder }}/{{ largeSrc }}" 
-    class="lightbox__tag" 
-    aria-label="Gallery image {{ image.data.title }}"
-    data-caption="<a href='/ensayo' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
+    aria-label="Francia image {{ image.data.title }}"
+    data-caption="{{ image.data.alt }}"
   >
-
     {% img {
       src: image.data.src,
       alt: image.data.alt,

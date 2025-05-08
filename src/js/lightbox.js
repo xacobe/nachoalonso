@@ -4,7 +4,7 @@ function initLightbox() {
   if (!lightboxInitialized) {
     baguetteBox.run('.gallery', {
       buttons: false,
-      captions: false,
+      captions: true,
       async: true
     });
     lightboxInitialized = true;

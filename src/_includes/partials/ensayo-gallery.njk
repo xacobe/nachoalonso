@@ -1,0 +1,36 @@
+<ul class="grid-container gallery slide--content">
+  {% for group in collections.ensayo.slice(0, 48) | batch(4) %}
+    <li class="grid-item">
+      {% set photoBg = image.data.photoBg %}
+      {% set photoDate = image.data.photoDate %}
+      {% set title = image.data.title %}
+      {% set alt = image.data.alt %}
+      {% for image in group %}
+      {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
+      {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
+      <a 
+        href="/images/{{ subfolder }}/{{ largeSrc }}" 
+        class="lightbox__tag {{ subfolder }}" 
+        aria-label="Gallery image {{ image.data.title }}"
+        data-caption="<a href='/' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
+      >
+
+    {% img {
+      src: image.data.src,
+      alt: image.data.alt,
+      className: "grid-image",
+      imgDir: image.data.imgDir
+    } %}
+  </a>
+{% endfor %}
+    </li>
+  {% endfor %}
+    <li class="grid-item grid-item-fake">
+    <div class="inline-thing">Volver a la </div><a href="/" class="grid-item-fake"> exposición</a>
+    </li>
+  <a id="toggleBtn" href="#" class="btn-pill slide--move-up">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+    </svg>
+  </a>
+</ul>

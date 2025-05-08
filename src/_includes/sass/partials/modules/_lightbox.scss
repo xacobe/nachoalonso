@@ -43,3 +43,22 @@
     background-size: cover;
     // background-blend-mode: hard-light;
   }
+  :has(.bg-dark) {
+    background-blend-mode:difference;
+    filter: invert(1);
+  }
+#baguetteBox-slider .full-image 
+figcaption {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ color: black;
+ background-color: transparent;
+ font-family: monospace;
+ font-size: 1.2rem;
+ text-transform: capitalize;
+ padding: 1rem;
+  a {
+    color: black;
+  }
+}
