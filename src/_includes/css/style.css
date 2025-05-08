@@ -260,7 +260,7 @@ h2, .h2 {
   z-index: 5;
   height: 2rem;
   width: 2rem;
-  margin: 2rem 2rem;
+  margin: 1rem;
   border-radius: 100% 100%;
   font-size: 1rem;
   text-decoration: none;
@@ -288,6 +288,7 @@ h2, .h2 {
   position: relative;
   color: black;
   padding: 0;
+  transform: rotate(-90deg);
 }
 
 .header {
