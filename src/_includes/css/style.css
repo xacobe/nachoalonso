@@ -179,7 +179,7 @@ h2, .h2 {
 #baguetteBox-slider .full-image figcaption {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   color: black;
   background-color: transparent;
   font-family: monospace;
@@ -275,15 +275,18 @@ h2, .h2 {
 .grid-item-fake {
   display: flex !important;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   font-family: monospace;
+  padding: 1rem;
+  text-align: right;
 }
 .grid-item-fake a {
   opacity: 1;
   visibility: visible;
   position: relative;
   color: black;
+  padding: 0;
 }
 
 .header {
