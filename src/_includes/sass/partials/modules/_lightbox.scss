@@ -38,10 +38,7 @@
   }
   
   #baguetteBox-overlay {
-    background-color: hsl(0deg 0% 100% / 81%) !important;
-    background-image: url("../css/images/bg-lightbox.jpg");
-    background-size: cover;
-    // background-blend-mode: hard-light;
+    background-color: white !important;
   }
   :has(.bg-dark) {
     background-blend-mode:difference;

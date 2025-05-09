@@ -105,10 +105,10 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
   
     try {
       const metadata = await Image(fullInputPath, {
-        widths: [300, 480, 640, 1024],
+        widths: [150, 300, 450],
         formats: ["webp", "jpeg"],
-        urlPath: "/images/",
-        outputDir: path.join("_site", "images"),
+        urlPath: `/images/${imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')}/`,
+        outputDir: path.join("_site", "images", imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')),
         filenameFormat: (id, src, width, format) => {
           const parsed = path.parse(src);
           return `${parsed.name}-${width}w.${format}`;
@@ -119,7 +119,7 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
       const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
   
       const sources = Object.values(metadata).map((imageFormat) => {
-        return `<source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="100vw">`;
+        return `<source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="15vw">`;
       }).join("\n");
   
       return `<picture>
