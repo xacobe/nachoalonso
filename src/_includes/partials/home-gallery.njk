@@ -1,25 +1,23 @@
 <ul class="grid-container gallery slide--content">
-  {# {% for group in collections.gallery.slice(0, 60) | batch(5) %} #}
   {% for group in collections.gallery.slice(0, 48) | batch(4) %}
     <li class="grid-item">
       {% for image in group %}
-  {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
-  {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
-  <a 
-    href="/images/{{ subfolder }}/{{ largeSrc }}" 
-    class="lightbox__tag" 
-    aria-label="Gallery image {{ image.data.title }}"
-    data-caption="<a href='/{{ subfolder }}' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
-  >
-
-    {% img {
-      src: image.data.src,
-      alt: image.data.alt,
-      className: "grid-image",
-      imgDir: image.data.imgDir
-    } %}
-  </a>
-{% endfor %}
+        {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
+        {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
+        <a 
+          href="{{ ('/images/' ~ subfolder ~ '/' ~ largeSrc) | url }}"
+          class="lightbox__tag" 
+          aria-label="Gallery image {{ image.data.title }}"
+          data-caption="<a href='{{ ('/' ~ subfolder) | url }}' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
+        >
+          {% img {
+            src: image.data.src,
+            alt: image.data.alt,
+            className: "grid-image",
+            imgDir: image.data.imgDir
+          } %}
+        </a>
+      {% endfor %}
     </li>
   {% endfor %}
   <a id="toggleBtn" href="#" class="btn-pill slide--move-up">
