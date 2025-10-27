@@ -140,6 +140,7 @@ module.exports = (eleventyConfig) => {
       includes: "_includes",
     },
     templateFormats: ["md", "liquid", "njk"],
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
+     pathPrefix: "/nachoalonso/"
   }
 };
