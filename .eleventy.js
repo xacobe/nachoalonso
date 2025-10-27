@@ -143,7 +143,7 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
   return {
     dir: {
       input: "src",
-      output: "_site",
+      output: "docs",
       layouts: "_includes/layouts",
       includes: "_includes",
     },
