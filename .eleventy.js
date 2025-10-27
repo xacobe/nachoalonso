@@ -86,53 +86,21 @@ module.exports = (eleventyConfig) => {
     return year.toString();
   });
 
-  // ✅ CORREGIDO: Shortcode que incluye la subcarpeta
-  eleventyConfig.addShortcode("img", async function ({ src, alt, className, imgDir = "images/" }) {
+  // ✅✅✅ COMPLETAMENTE CORREGIDO: Shortcode con ambos problemas solucionados
+  eleventyConfig.addShortcode("img", function ({ src, alt, className, imgDir = "images/" }) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
     }
 
-    const fullInputPath = path.join(__dirname, 'src', imgDir, src);
-    console.log("Procesando imagen desde:", fullInputPath);
+    // ✅ EXTRAER LA SUBCARPETA (francia, ensayo, etc.)
+    const subfolder = imgDir.replace('./src/images/', '').replace('./src/', '').replace('images/', '');
+    
+    // ✅✅ CORREGIDO: 1. Agregar la barra separadora y 2. Incluir nachoalonso
+    const imagePath = subfolder ? 
+      `/nachoalonso/images/${subfolder}/${src}` : 
+      `/nachoalonso/images/${src}`;
 
-    try {
-      const metadata = await Image(fullInputPath, {
-        widths: [150, 300, 450],
-        formats: ["webp", "jpeg"],
-        // ✅ INCLUIR LA SUBCARPETA EN EL PATH
-        urlPath: "/nachoalonso/images/",
-        outputDir: path.join("docs", "images"),
-        filenameFormat: (id, src, width, format) => {
-          const parsed = path.parse(src);
-          return `${parsed.name}-${width}w.${format}`;
-        }
-      });
-
-      const lowsrc = metadata.jpeg[0];
-      const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
-
-      const sources = Object.values(metadata).map((imageFormat) => {
-        return `<source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="15vw">`;
-      }).join("\n");
-
-      return `<picture>
-      ${sources}
-      <img
-        src="${lowsrc.url}"
-        width="${highsrc.width}"
-        height="${highsrc.height}"
-        alt="${alt}"
-        loading="lazy"
-        decoding="async"
-        class="${className || ''}"
-      >
-    </picture>`;
-    } catch (error) {
-      console.error("Error procesando imagen:", error);
-      // ✅ CORREGIDO: Fallback que incluye la subcarpeta
-      const subfolder = imgDir.replace('./src/images/', '').replace('./src/', '').replace('images/', '');
-      return `<img src="/nachoalonso/images/${subfolder}${src}" alt="${alt}" class="${className || ''}" loading="lazy">`;
-    }
+    return `<img src="${imagePath}" alt="${alt}" class="${className || ''}" loading="lazy">`;
   });
 
   return {
@@ -144,6 +112,7 @@ module.exports = (eleventyConfig) => {
     },
     templateFormats: ["md", "liquid", "njk"],
     passthroughFileCopy: true,
-    pathPrefix: isGitHubPages ? "/nachoalonso/" : "/"
+    // ✅ FORZAR pathPrefix SIEMPRE para GitHub Pages
+    pathPrefix: "/nachoalonso/"
   }
 };
