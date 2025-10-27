@@ -3,8 +3,7 @@ const { minify } = require("terser");
 const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
-const path = require('path'); // Añade esto con los otros requires
-
+const path = require('path');
 
 module.exports = (eleventyConfig) => {
 
@@ -23,27 +22,24 @@ module.exports = (eleventyConfig) => {
   });
 
   // Nueva colección solo para ensayos
-eleventyConfig.addCollection("ensayo", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("src/gallery/ensayo/*.md");
-});
+  eleventyConfig.addCollection("ensayo", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/gallery/ensayo/*.md");
+  });
 
-eleventyConfig.addCollection("francia", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
-});
+  eleventyConfig.addCollection("francia", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
+  });
 
-  // Perform manual passthrough file copy to include directories in the build output _site
-    // Imagenes CSS
+  // ✅ CORREGIDO: Passthrough copy simplificado y efectivo
+  eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/_includes/css/images");
-    
-  eleventyConfig.addPassthroughCopy("src/images/**/*.{jpg,jpeg,png,gif,webp,svg}");
-  eleventyConfig.addPassthroughCopy("./src/photos");
-  eleventyConfig.addPassthroughCopy("./src/videos");
-  eleventyConfig.addPassthroughCopy("./src/sounds");
-  eleventyConfig.addPassthroughCopy("./src/css");
-  // eleventyConfig.addPassthroughCopy("./src/js");
+  eleventyConfig.addPassthroughCopy("src/photos");
+  eleventyConfig.addPassthroughCopy("src/videos");
+  eleventyConfig.addPassthroughCopy("src/sounds");
+  eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
+  eleventyConfig.addPassthroughCopy("src/favicon_data");
 
-  eleventyConfig.addPassthroughCopy("./src/favicon_data");
   // Copiar los assets de baguettebox
   eleventyConfig.addPassthroughCopy({
     'node_modules/baguettebox.js/dist/baguetteBox.min.css': 'css/baguetteBox.min.css'
@@ -54,13 +50,11 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
     'node_modules/baguettebox.js/dist/baguetteBox.min.js': 'js/baguetteBox.min.js'
   });
 
-
   // Create css-clean CSS Minifier filter
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
   
-
   // Create terser JS Minifier async filter (Nunjucks)
   eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
     code,
@@ -74,10 +68,6 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
       callback(null, code);
     }
   });
-
-
-
-
 
   // Configure image in a template paired shortcode
   eleventyConfig.addPairedShortcode("image", (srcSet, src, alt, sizes = "(min-width: 400px) 33.3vw, 100vw") => {
@@ -95,20 +85,21 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
     return year.toString();
   });
 
-  eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "./src/images/" }) {
+  // ✅ CORREGIDO: Shortcode de imagen simplificado para desarrollo
+  eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "images/" }) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
     }
   
-    const fullInputPath = path.join(__dirname, imgDir, src);
+    const fullInputPath = path.join(__dirname, 'src', imgDir, src);
     console.log("Procesando imagen desde:", fullInputPath);
   
     try {
       const metadata = await Image(fullInputPath, {
         widths: [150, 300, 450],
         formats: ["webp", "jpeg"],
-        urlPath: `/images/${imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')}/`,
-        outputDir: path.join("docs", "images", imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')),
+        urlPath: `/images/`,
+        outputDir: path.join("docs", "images"),
         filenameFormat: (id, src, width, format) => {
           const parsed = path.parse(src);
           return `${parsed.name}-${width}w.${format}`;
@@ -136,7 +127,8 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
       </picture>`;
     } catch (error) {
       console.error("Error procesando imagen:", error);
-      return `<div class="image-error">Error cargando imagen: ${src}</div>`;
+      // Fallback a imagen directa
+      return `<img src="/images/${src}" alt="${alt}" class="${className || ''}" loading="lazy">`;
     }
   });
 
