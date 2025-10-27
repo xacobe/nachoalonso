@@ -4,7 +4,6 @@ const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 const path = require('path');
-const isGitHubPages = process.env.GITHUB_ACTIONS || false;
 
 module.exports = (eleventyConfig) => {
 
@@ -31,7 +30,7 @@ module.exports = (eleventyConfig) => {
     return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
   });
 
-  // ✅ CORREGIDO: Passthrough copy simplificado y efectivo
+  // Passthrough copy
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/_includes/css/images");
   eleventyConfig.addPassthroughCopy("src/photos");
@@ -86,19 +85,19 @@ module.exports = (eleventyConfig) => {
     return year.toString();
   });
 
-  // ✅✅✅ COMPLETAMENTE CORREGIDO: Shortcode con ambos problemas solucionados
+  // ✅ CORREGIDO: Shortcode SIN path prefix
   eleventyConfig.addShortcode("img", function ({ src, alt, className, imgDir = "images/" }) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
     }
 
-    // ✅ EXTRAER LA SUBCARPETA (francia, ensayo, etc.)
+    // EXTRAER LA SUBCARPETA (francia, ensayo, etc.)
     const subfolder = imgDir.replace('./src/images/', '').replace('./src/', '').replace('images/', '');
     
-    // ✅✅ CORREGIDO: 1. Agregar la barra separadora y 2. Incluir nachoalonso
+    // ✅ CORREGIDO: Rutas SIN /nachoalonso/
     const imagePath = subfolder ? 
-      `/nachoalonso/images/${subfolder}/${src}` : 
-      `/nachoalonso/images/${src}`;
+      `/images/${subfolder}/${src}` : 
+      `/images/${src}`;
 
     return `<img src="${imagePath}" alt="${alt}" class="${className || ''}" loading="lazy">`;
   });
@@ -112,7 +111,7 @@ module.exports = (eleventyConfig) => {
     },
     templateFormats: ["md", "liquid", "njk"],
     passthroughFileCopy: true,
-    // ✅ FORZAR pathPrefix SIEMPRE para GitHub Pages
-    pathPrefix: "/nachoalonso/"
+    // ✅ ELIMINADO: pathPrefix (o déjalo como "/")
+    pathPrefix: "/"
   }
 };
