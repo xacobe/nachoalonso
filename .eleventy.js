@@ -4,6 +4,7 @@ const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
 const path = require('path');
+const isGitHubPages = process.env.GITHUB_ACTIONS || false;
 
 module.exports = (eleventyConfig) => {
 
@@ -141,6 +142,6 @@ module.exports = (eleventyConfig) => {
     },
     templateFormats: ["md", "liquid", "njk"],
     passthroughFileCopy: true,
-     pathPrefix: "/nachoalonso/"
+    pathPrefix: isGitHubPages ? "/nachoalonso/" : "/"
   }
 };
