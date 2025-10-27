@@ -10,7 +10,7 @@
         {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
         
         <a 
-          href="{{ ('/images/' ~ subfolder ~ '/' ~ largeSrc) | url }}" 
+          href="{{ ('images/' ~ subfolder ~ '/' ~ largeSrc) | url }}" 
           class="lightbox__tag {{ subfolder }}" 
           aria-label="Gallery image {{ image.data.title }}"
           data-caption="<a href='{{ '/' | url }}' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"

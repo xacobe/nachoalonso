@@ -18,16 +18,16 @@ module.exports = (eleventyConfig) => {
 
   markdownTemplateEngine: "njk";
 
-  eleventyConfig.addCollection("gallery", function(collectionApi) {
+  eleventyConfig.addCollection("gallery", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/gallery/**/*.md");
   });
 
   // Nueva colección solo para ensayos
-  eleventyConfig.addCollection("ensayo", function(collectionApi) {
+  eleventyConfig.addCollection("ensayo", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/gallery/ensayo/*.md");
   });
 
-  eleventyConfig.addCollection("francia", function(collectionApi) {
+  eleventyConfig.addCollection("francia", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
   });
 
@@ -55,7 +55,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
-  
+
   // Create terser JS Minifier async filter (Nunjucks)
   eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
     code,
@@ -86,48 +86,52 @@ module.exports = (eleventyConfig) => {
     return year.toString();
   });
 
-  eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "images/" }) {
+  // ✅ CORREGIDO: Shortcode que incluye la subcarpeta
+  eleventyConfig.addShortcode("img", async function ({ src, alt, className, imgDir = "images/" }) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
     }
-  
+
     const fullInputPath = path.join(__dirname, 'src', imgDir, src);
     console.log("Procesando imagen desde:", fullInputPath);
-  
+
     try {
       const metadata = await Image(fullInputPath, {
         widths: [150, 300, 450],
         formats: ["webp", "jpeg"],
-        urlPath: "images/",
+        // ✅ INCLUIR LA SUBCARPETA EN EL PATH
+        urlPath: "/nachoalonso/images/",
         outputDir: path.join("docs", "images"),
         filenameFormat: (id, src, width, format) => {
           const parsed = path.parse(src);
           return `${parsed.name}-${width}w.${format}`;
         }
       });
-  
+
       const lowsrc = metadata.jpeg[0];
       const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
-  
+
       const sources = Object.values(metadata).map((imageFormat) => {
         return `<source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="15vw">`;
       }).join("\n");
-  
+
       return `<picture>
-        ${sources}
-        <img
-          src="${lowsrc.url}"
-          width="${highsrc.width}"
-          height="${highsrc.height}"
-          alt="${alt}"
-          loading="lazy"
-          decoding="async"
-          class="${className || ''}"
-        >
-      </picture>`;
+      ${sources}
+      <img
+        src="${lowsrc.url}"
+        width="${highsrc.width}"
+        height="${highsrc.height}"
+        alt="${alt}"
+        loading="lazy"
+        decoding="async"
+        class="${className || ''}"
+      >
+    </picture>`;
     } catch (error) {
       console.error("Error procesando imagen:", error);
-      return `<img src="images/${src}" alt="${alt}" class="${className || ''}" loading="lazy">`;
+      // ✅ CORREGIDO: Fallback que incluye la subcarpeta
+      const subfolder = imgDir.replace('./src/images/', '').replace('./src/', '').replace('images/', '');
+      return `<img src="/nachoalonso/images/${subfolder}${src}" alt="${alt}" class="${className || ''}" loading="lazy">`;
     }
   });
 
