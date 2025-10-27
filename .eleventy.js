@@ -86,7 +86,6 @@ module.exports = (eleventyConfig) => {
     return year.toString();
   });
 
-  // ✅ CORREGIDO: Shortcode de imagen simplificado para desarrollo
   eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "images/" }) {
     if (!alt) {
       throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
@@ -99,7 +98,7 @@ module.exports = (eleventyConfig) => {
       const metadata = await Image(fullInputPath, {
         widths: [150, 300, 450],
         formats: ["webp", "jpeg"],
-        urlPath: `/images/`,
+        urlPath: "images/",
         outputDir: path.join("docs", "images"),
         filenameFormat: (id, src, width, format) => {
           const parsed = path.parse(src);
@@ -128,8 +127,7 @@ module.exports = (eleventyConfig) => {
       </picture>`;
     } catch (error) {
       console.error("Error procesando imagen:", error);
-      // Fallback a imagen directa
-      return `<img src="/images/${src}" alt="${alt}" class="${className || ''}" loading="lazy">`;
+      return `<img src="images/${src}" alt="${alt}" class="${className || ''}" loading="lazy">`;
     }
   });
 
