@@ -108,7 +108,7 @@ eleventyConfig.addCollection("francia", function(collectionApi) {
         widths: [150, 300, 450],
         formats: ["webp", "jpeg"],
         urlPath: `/images/${imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')}/`,
-        outputDir: path.join("_site", "images", imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')),
+        outputDir: path.join("docs", "images", imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')),
         filenameFormat: (id, src, width, format) => {
           const parsed = path.parse(src);
           return `${parsed.name}-${width}w.${format}`;
