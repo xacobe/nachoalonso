@@ -262,6 +262,7 @@ h2, .h2 {
   border-radius: 100% 100%;
   font-size: 1rem;
   text-decoration: none;
+  background-color: #c30e0e;
 }
 
 #bg-video {
@@ -305,7 +306,10 @@ h2, .h2 {
   letter-spacing: 0.8px;
   font-family: monospace;
   padding: 2rem;
-  background-color: transparent !important;
+  background-color: black !important;
+  background-image: url("/images/bg-footer.jpg");
+  background-size: cover;
+  background-position: bottom;
   height: 33.33dvh;
   /* Horizonal: más columnas */
   /* Vertical: más filas */
@@ -333,6 +337,26 @@ h2, .h2 {
   .footer {
     height: 50dvh;
   }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info {
+  flex-basis: 75%;
+}
+
+.footer-picture {
+  background-image: url("/images/Ensayo-sobre-la-noche-portada.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 25dvh;
+  width: 100%;
+  flex-basis: 25%;
 }
 
 /* 404 page styles */
