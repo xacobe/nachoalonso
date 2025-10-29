@@ -305,11 +305,8 @@ h2, .h2 {
   font-size: 0.8rem;
   letter-spacing: 0.8px;
   font-family: monospace;
-  padding: 2rem;
-  background-color: black !important;
-  background-image: url("/images/bg-footer.gif");
-  background-size: cover;
-  background-position: bottom;
+  padding: 1.4rem;
+  background-color: white !important;
   height: 33.33dvh;
   /* Horizonal: más columnas */
   /* Vertical: más filas */
@@ -323,7 +320,7 @@ h2, .h2 {
   color: white !important;
 }
 .footer p {
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: black;
   padding: 0.5rem;
   margin-block: 0.5rem;
   width: fit-content;
@@ -346,7 +343,12 @@ h2, .h2 {
 }
 
 .footer-info {
-  flex-basis: 75%;
+  flex-basis: 50%;
+}
+
+.footer-info--title {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .footer-picture {
@@ -356,7 +358,14 @@ h2, .h2 {
   background-repeat: no-repeat;
   height: 25dvh;
   width: 100%;
-  flex-basis: 25%;
+  flex-basis: 50%;
+}
+
+.footer-links {
+  color: black;
+}
+.footer-links a {
+  color: black !important;
 }
 
 /* 404 page styles */
