@@ -251,7 +251,8 @@ h2, .h2 {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  color: white;
+  color: #c30e0e;
+  background-color: white;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -262,7 +263,6 @@ h2, .h2 {
   border-radius: 100% 100%;
   font-size: 1rem;
   text-decoration: none;
-  background-color: #c30e0e;
 }
 
 #bg-video {
@@ -295,38 +295,58 @@ h2, .h2 {
   z-index: 10;
 }
 
-.footer {
+.book__item {
   display: flex;
-  align-items: center;
+}
+
+.book__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-block-end: 1rem;
+  border-bottom: solid 2px #000;
+  width: fit-content;
+}
+
+.book__picture {
+  background-image: url("/images/Ensayo-sobre-la-noche-portada.jpeg");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 20dvh;
+  width: 100%;
+  flex-basis: 50%;
+  margin-block-start: 0.2rem;
+}
+
+.footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
   color: #d6d6d6;
   z-index: -2;
-  font-weight: lighter;
-  font-size: 0.8rem;
-  letter-spacing: 0.8px;
-  font-family: monospace;
   padding-inline: 1.4rem;
-  background-color: white !important;
+  background-color: #fff !important;
   width: 100%;
+  height: 33.33dvh;
+  font-size: 0.8rem;
   height: 33.33dvh;
   /* Horizonal: más columnas */
   /* Vertical: más filas */
 }
 .footer h2, .footer h3, .footer h4 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #d6d6d6;
-  font-size: 1.2rem;
+  color: #000;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-block-start: 0.4rem;
+  margin-block-end: 1rem;
 }
 .footer a {
   color: white !important;
 }
 .footer p {
-  background-color: black;
+  color: #000;
   padding: 0.5rem;
-  margin-block: 0.2rem;
-  width: fit-content;
+  padding-block: 0;
 }
 @media (min-aspect-ratio: 5/2) {
   .footer {
@@ -339,40 +359,11 @@ h2, .h2 {
   }
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.footer-info {
-  flex-basis: 50%;
-  width: 100%;
-  display: flex;
-  align-items: end;
-  flex-direction: column;
-  padding-inline-end: 0.4rem;
-}
-
-.footer-info--title {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.footer-picture {
-  background-image: url("/images/Ensayo-sobre-la-noche-portada.jpeg");
-  background-size: contain;
-  background-position: left;
-  background-repeat: no-repeat;
-  height: 29.6dvh;
-  width: 100%;
-  flex-basis: 50%;
-  margin-block-start: 0.2rem;
-}
-
 .footer-links {
-  color: black;
+  color: #000;
+  position: absolute !important;
+  bottom: 0;
+  right: 0;
 }
 .footer-links a {
   color: black !important;

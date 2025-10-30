@@ -1,29 +1,35 @@
 <footer class="footer">
     <div class="footer-content">
-        <div class="footer-info home">
-            <p class="footer-info--title">ENSAYO SOBRE LA NOCHE</p>
-            <p>Solar de edicións</p>
-            <p>Primera edición: 400 ejemplares</p>
-            <p>Vigo, 2022</p>
-            {# <p>&copy; {% getYear %} {{ site.author.firstName }} {{ site.author.lastName }}.</a></p> #}
-            <ul class="footer-links">
-
-
-                <li class="footer-link"><a href="{{ site.socials.github }}">Instagram: @ntx_a_</a></li>
-            </ul>
-        </div>
-        <div class="footer-picture">
-            {# {% img {
+        <ul class="book__list home">
+        <h2 class="footer-heading">Libros publicados</h2>
+            <li class="book__item">
+                <div class="book__details">
+                    <p class="book__title">Ensayo sobre la noche</p>
+                    <p>Solar de edicións</p>
+                    <p>Primera edición: 400 ejemplares</p>
+                    <p>Vigo, 2022</p>
+                    {# <p>&copy; {% getYear %} {{ site.author.firstName }} {{ site.author.lastName }}.</a></p> #}
+                </div>
+                <div class="book__picture">
+                    {# {% img {
               src: "/ensayo-sobre-la-noche--portada.jpg",
               alt: "Portada del libro Ensayo sobre la noche",
-              className: "footer-image--portada",
+              className: "book__picture--portada",
               imgDir: "./src/images/"
             } %} #}
-            {# {% img {
+                    {# {% img {
               src: "/ensayo-sobre-la-noche--abierto.jpg",
               alt: "Libro Ensayo sobre la noche abierto",
               className: "footer-image--abierto",
               imgDir: "./src/images/"
             } %} #}
-    </div>
-</footer>
+                </div>
+            </li>
+        </ul>
+        <ul class="footer-links">
+
+            <li class="footer-link">
+                <a href="{{ site.socials.github }}">Instagram: @ntx_a_</a>
+            </li>
+        </ul>
+    </footer>

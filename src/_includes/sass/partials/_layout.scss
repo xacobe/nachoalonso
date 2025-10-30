@@ -5,37 +5,54 @@
   z-index: 10;
 }
 
+.book__item {
+  display:flex;
+}
+.book__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-block-end: 1rem;
+  border-bottom: solid 2px #000;
+  width: fit-content;
+}
+.book__picture {
+  background-image: url("/images/Ensayo-sobre-la-noche-portada.jpeg");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 20dvh;
+  width: 100%;
+  flex-basis: 50%;
+  margin-block-start: .2rem;
+}
 
 .footer {
-  display: flex;
-  align-items: center;
   position: absolute;
   bottom: 0;
-  width: 100%;
   color: #d6d6d6;
   z-index: -2;
-  font-weight: lighter;
-  font-size: .8rem;
-  letter-spacing: .8px;
-  font-family: monospace;
   padding-inline: 1.4rem;
-  background-color: white !important;
+  background-color: #fff !important;
   width: 100%;
+  height: 33.33dvh;
+  font-size: .8rem;
 
   h2, h3, h4 {
-    font-family: $system-font;
-    color: #d6d6d6;
-    font-size: 1.2rem;
+    color: #000;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-block-start: 0.4rem;
+    margin-block-end: 1rem;
   }
 
   a {
     color: white !important;
   }
   p {
-    background-color: black;
-    padding: .5rem;
-    margin-block: 0.2rem;
-    width: fit-content;
+  color: #000;
+  padding: .5rem;
+  padding-block: 0;
   }
   
   height: 33.33dvh;
@@ -49,36 +66,13 @@
     height: 50dvh;
   }
 }
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-} 
-.footer-info {
-  flex-basis: 50%;
-  width: 100%;
-  display: flex;
-  align-items: end;
-  flex-direction: column;
-  padding-inline-end: 0.4rem;
-}
-.footer-info--title {
-  font-size: 1.2rem;
-  font-weight: bold;
-} 
-.footer-picture {
-  background-image: url("/images/Ensayo-sobre-la-noche-portada.jpeg");
-  background-size: contain;
-  background-position: left;
-  background-repeat: no-repeat;
-  height: 29.6dvh;
-  width: 100%;
-  flex-basis: 50%;
-  margin-block-start: .2rem;
-}
+
 .footer-links {
-  color: black;
+  color: #000;
+  position: absolute !important;
+  bottom: 0;
+  right: 0;
+
 
   a {
     color: black !important;
