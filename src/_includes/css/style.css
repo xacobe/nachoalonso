@@ -297,6 +297,7 @@ h2, .h2 {
 
 .book__item {
   display: flex;
+  justify-content: center;
 }
 
 .book__title {
@@ -308,14 +309,14 @@ h2, .h2 {
 }
 
 .book__picture {
-  background-image: url("/images/Ensayo-sobre-la-noche-portada.jpeg");
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
   height: 20dvh;
-  width: 100%;
-  flex-basis: 50%;
   margin-block-start: 0.2rem;
+}
+.book__picture img {
+  object-fit: contain;
 }
 
 .footer {
