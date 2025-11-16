@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/css/baguetteBox.min.css">
     
     <style>
-      @charset "UTF-8";*,::after,::before{box-sizing:border-box}body{margin:0;padding:0;background:#fcfcfc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;font-size:16px;line-height:1.6}img{max-width:100%;width:100%;height:100%;object-fit:cover}h1,h2,h3,h4,h5{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;color:#212121}.h1,h1{font-size:clamp(2.75rem,8vw,3.25rem)}.h2,h2{font-size:clamp(1.5rem,5vw,1.8rem)}.grid-container{display:grid;background-color:#fff;position:fixed;height:100dvh;width:100dvw;gap:.2rem;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}.header{justify-content:flex-start}@media (min-aspect-ratio:5/2){.header{justify-content:flex-end}.grid-container{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}}@media (max-aspect-ratio:3/3.2){.header{justify-content:center!important}.grid-container{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}}.grid-item{overflow:hidden;width:100%;height:100%;position:relative;aspect-ratio:1/1}.grid-item a{position:absolute;inset:0;display:block;opacity:0;visibility:hidden;cursor:pointer;transition:opacity 1s ease-in-out,visibility 1s ease-in-out}.grid-item a.active{opacity:1;visibility:visible;z-index:1}.grid-item a:first-child.active{z-index:2}.grid-item img{width:100%;height:100%;object-fit:cover;display:block;transform:translateZ(0)}@keyframes random-cycle{0%,20%{opacity:1;visibility:visible}100%,25%{opacity:0;visibility:hidden}}.grid-item.css-animated a{animation:random-cycle 15s infinite}.grid-item.css-animated a:nth-child(1){animation-delay:0s}.grid-item.css-animated a:nth-child(2){animation-delay:3s}.grid-item.css-animated a:nth-child(3){animation-delay:6s}.grid-item.css-animated a:nth-child(4){animation-delay:9s}.grid-item.css-animated a:nth-child(5){animation-delay:12s}.baguetteBox-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}.baguetteBox-button{background-color:transparent!important;border-radius:100%}.baguetteBox-button#close-button svg{position:fixed;top:1rem;right:1rem;left:inherit}.baguetteBox-button#close-button svg g{stroke:#000;stroke-width:2px!important}.baguetteBox-button:hover{background-color:transparent}.baguetteBox-button:hover g{stroke:#fff!important}#next-button,#previous-button{display:none}#baguetteBox-overlay{background-color:#fff!important}:has(.bg-dark){background-blend-mode:difference;filter:invert(1)}#baguetteBox-slider .full-image figcaption{display:inline-flex;color:#666;background-color:transparent;font-family:monospace;font-size:.9rem;text-transform:capitalize;padding:1rem;justify-content:center}#baguetteBox-slider .full-image figcaption a{color:#000;padding-inline-end:1rem;text-underline-offset:.2rem}.page-title{display:block;padding-block-start:1rem;padding-inline:1rem;width:8rem;font-size:1.5rem;font-weight:bolder;text-transform:uppercase;color:#fff;line-height:1.1;text-align:center;text-decoration:none}.page-title .first_name{letter-spacing:3.2px}.slide--content{overflow:hidden;border-block:solid #fff 2px;transition:transform .5s ease-in;will-change:transform}.slide--content.slid-up{transform:translateY(-33.33%)}@media (min-aspect-ratio:5/2){.slide--content.slid-up{transform:translateY(-50%)}}@media (max-aspect-ratio:3/3.2){.header{width:100%}.header .page-title{margin-inline:auto}.slide--content.slid-up{transform:translateY(-50%)}}.slide--move-up{transition:all 1.5s ease-in-out}.slid-up .slide--move-up{transform:rotate(180deg);transition:all 1.5s ease-in-out}.btn-pill{display:flex;justify-content:center;align-items:center;background-color:transparent;color:#fff;position:absolute;right:0;bottom:0;z-index:5;height:2rem;width:2rem;margin:1rem;border-radius:100% 100%;font-size:1rem;text-decoration:none}#bg-video{position:fixed;width:100%;bottom:0;z-index:-3}.grid-item-fake{display:flex!important;flex-direction:column;justify-content:flex-end;align-items:flex-end;font-family:monospace;padding:1rem;text-align:right}.grid-item-fake a{opacity:1;visibility:visible;position:relative;color:#000;padding:0;transform:rotate(-90deg)}.header{position:absolute;z-index:10}.footer{position:absolute;bottom:0;width:100%;color:#d6d6d6;z-index:-2;font-weight:lighter;font-size:.8rem;letter-spacing:.8px;font-family:monospace;padding:2rem;background-color:transparent!important;height:33.33dvh}.footer h2,.footer h3,.footer h4{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;color:#d6d6d6;font-size:1.2rem}.footer a{color:#fff!important}.footer p{background-color:rgba(0,0,0,.35);padding:.5rem;margin-block:.5rem;width:fit-content}@media (min-aspect-ratio:5/2){.footer{height:50dvh}}@media (max-aspect-ratio:3/3.2){.footer{height:50dvh}}.four-oh-four{margin:0 auto;width:100%;max-width:90ch;padding-left:1.5rem;padding-right:1.5rem;overflow:hidden;background:inherit;min-height:100vh}.four-oh-four ul{padding-left:0}.four-oh-four ul li{padding:12px 14px;margin:10px auto}*,::after,::before{box-sizing:border-box}ol[class],ul[class]{padding:0}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,h5,li,ol[class],p,ul[class]{margin:0}ol[class],ul[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important;scroll-behavior:auto!important}}
+      @charset "UTF-8";*,::after,::before{box-sizing:border-box}body{margin:0;padding:0;background:#fcfcfc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;font-size:16px;line-height:1.6}img{max-width:100%;width:100%;height:100%;object-fit:cover}h1,h2,h3,h4,h5{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;color:#212121}.h1,h1{font-size:clamp(2.75rem,8vw,3.25rem)}.h2,h2{font-size:clamp(1.5rem,5vw,1.8rem)}.grid-container{display:grid;background-color:#fff;position:fixed;height:100dvh;width:100dvw;gap:.2rem;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}.header{justify-content:flex-start}@media (min-aspect-ratio:5/2){.header{justify-content:flex-end}.grid-container{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}}@media (max-aspect-ratio:3/3.2){.header{justify-content:center!important}.grid-container{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}}.grid-item{overflow:hidden;width:100%;height:100%;position:relative;aspect-ratio:1/1}.grid-item a{position:absolute;inset:0;display:block;opacity:0;visibility:hidden;cursor:pointer;transition:opacity 1s ease-in-out,visibility 1s ease-in-out}.grid-item a.active{opacity:1;visibility:visible;z-index:1}.grid-item a:first-child.active{z-index:2}.grid-item img{width:100%;height:100%;object-fit:cover;display:block;transform:translateZ(0)}@keyframes random-cycle{0%,20%{opacity:1;visibility:visible}100%,25%{opacity:0;visibility:hidden}}.grid-item.css-animated a{animation:random-cycle 15s infinite}.grid-item.css-animated a:nth-child(1){animation-delay:0s}.grid-item.css-animated a:nth-child(2){animation-delay:3s}.grid-item.css-animated a:nth-child(3){animation-delay:6s}.grid-item.css-animated a:nth-child(4){animation-delay:9s}.grid-item.css-animated a:nth-child(5){animation-delay:12s}.baguetteBox-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}.baguetteBox-button{background-color:transparent!important;border-radius:100%}.baguetteBox-button#close-button svg{position:fixed;top:1rem;right:1rem;left:inherit}.baguetteBox-button#close-button svg g{stroke:#000;stroke-width:2px!important}.baguetteBox-button:hover{background-color:transparent}.baguetteBox-button:hover g{stroke:#fff!important}#next-button,#previous-button{display:none}#baguetteBox-overlay{background-color:#fff!important}:has(.bg-dark){background-blend-mode:difference;filter:invert(1)}#baguetteBox-slider .full-image figcaption{display:inline-flex;color:#666;background-color:transparent;font-family:monospace;font-size:.9rem;text-transform:capitalize;padding:1rem;justify-content:center}#baguetteBox-slider .full-image figcaption a{color:#000;padding-inline-end:1rem;text-underline-offset:.2rem}.page-title{display:block;padding-block-start:1rem;padding-inline:1rem;width:8rem;font-size:1.5rem;font-weight:bolder;text-transform:uppercase;color:#fff;line-height:1.1;text-align:center;text-decoration:none}.page-title .first_name{letter-spacing:3.2px}.slide--content{overflow:hidden;border-block:solid #fff 2px;transition:transform .5s ease-in;will-change:transform}.slide--content.slid-up{transform:translateY(-33.33%)}@media (min-aspect-ratio:5/2){.slide--content.slid-up{transform:translateY(-50%)}}@media (max-aspect-ratio:3/3.2){.header{width:100%}.header .page-title{margin-inline:auto}.slide--content.slid-up{transform:translateY(-50%)}}.slide--move-up{transition:all 1.5s ease-in-out}.slid-up .slide--move-up{transform:rotate(180deg);transition:all 1.5s ease-in-out}.btn-pill{display:flex;justify-content:center;align-items:center;background-color:transparent;color:#c30e0e;background-color:#fff;position:absolute;right:0;bottom:0;z-index:5;height:2rem;width:2rem;margin:1rem;border-radius:100% 100%;font-size:1rem;text-decoration:none}#bg-video{position:fixed;width:100%;bottom:0;z-index:-3}.grid-item-fake{display:flex!important;flex-direction:column;justify-content:flex-end;align-items:flex-end;font-family:monospace;padding:1rem;text-align:right}.grid-item-fake a{opacity:1;visibility:visible;position:relative;color:#000;padding:0;transform:rotate(-90deg)}.header{position:absolute;z-index:10}.book__list{display:flex;flex-direction:column;align-items:center}.book__item{display:flex;justify-content:center}.book__details{flex-basis:70%}.book__title{font-size:1rem;font-weight:700;margin-block-end:.4rem;border-bottom:solid 2px #000;width:fit-content}.book__picture{background-size:contain;background-position:left;background-repeat:no-repeat;height:20dvh;margin-block-start:.2rem}.book__picture img{object-fit:contain}.footer{position:absolute;bottom:0;color:#d6d6d6;z-index:-2;padding-inline:1.4rem;background-color:#fff!important;width:100%;height:33.33dvh;font-size:.8rem;height:33.33dvh}.footer h2,.footer h3,.footer h4{color:#000;font-size:1.4rem;text-transform:uppercase;text-align:center;margin-block-start:.4rem;margin-block-end:1rem}.footer a{color:#fff!important}.footer p{color:#000;padding:.5rem;padding-block:0}@media (min-aspect-ratio:5/2){.footer{height:50dvh}}@media (max-aspect-ratio:3/3.2){.footer{height:50dvh}}.footer-links{color:#000;position:absolute!important;bottom:0;right:0}.footer-links a{color:#000!important}.four-oh-four{margin:0 auto;width:100%;max-width:90ch;padding-left:1.5rem;padding-right:1.5rem;overflow:hidden;background:inherit;min-height:100vh}.four-oh-four ul{padding-left:0}.four-oh-four ul li{padding:12px 14px;margin:10px auto}*,::after,::before{box-sizing:border-box}ol[class],ul[class]{padding:0}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,h5,li,ol[class],p,ul[class]{margin:0}ol[class],ul[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important;scroll-behavior:auto!important}}
     </style>
   </head>
 
@@ -55,16 +55,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/01.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Abstract architecture black and white boardwalk"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>October 14, 2020"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/01.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Abstract architecture black and white boardwalk"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>October 14, 2020"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/01-150w.webp 150w, /images/ensayo/01-300w.webp 300w, /images/ensayo/01-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/01-150w.jpeg 150w, /images/ensayo/01-300w.jpeg 300w, /images/ensayo/01-450w.jpeg 450w" sizes="15vw">
         <img
@@ -77,18 +77,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/02.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Arquitectura en espiral en distrito financiero"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 14, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/02.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Arquitectura en espiral en distrito financiero"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 14, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/02-150w.webp 150w, /images/ensayo/02-300w.webp 300w, /images/ensayo/02-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/02-150w.jpeg 150w, /images/ensayo/02-300w.jpeg 300w, /images/ensayo/02-450w.jpeg 450w" sizes="15vw">
         <img
@@ -101,18 +101,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/03.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Asfalto bajo el agua en amanecer gris"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 22, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/03.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Asfalto bajo el agua en amanecer gris"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 22, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/03-150w.webp 150w, /images/ensayo/03-300w.webp 300w, /images/ensayo/03-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/03-150w.jpeg 150w, /images/ensayo/03-300w.jpeg 300w, /images/ensayo/03-450w.jpeg 450w" sizes="15vw">
         <img
@@ -125,18 +125,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/04.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Autopista inundada tras fuertes lluvias"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Enero 13, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/04.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Autopista inundada tras fuertes lluvias"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Enero 13, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/04-150w.webp 150w, /images/ensayo/04-300w.webp 300w, /images/ensayo/04-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/04-150w.jpeg 150w, /images/ensayo/04-300w.jpeg 300w, /images/ensayo/04-450w.jpeg 450w" sizes="15vw">
         <img
@@ -149,8 +149,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -159,16 +159,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/05.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Brown painted wall on dim light"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>October 18, 2020"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/05.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Brown painted wall on dim light"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>October 18, 2020"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/05-150w.webp 150w, /images/ensayo/05-300w.webp 300w, /images/ensayo/05-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/05-150w.jpeg 150w, /images/ensayo/05-300w.jpeg 300w, /images/ensayo/05-450w.jpeg 450w" sizes="15vw">
         <img
@@ -181,18 +181,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/06.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Buildings during nighttime"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>October 9, 2020"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/06.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Buildings during nighttime"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>October 9, 2020"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/06-150w.webp 150w, /images/ensayo/06-300w.webp 300w, /images/ensayo/06-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/06-150w.jpeg 150w, /images/ensayo/06-300w.jpeg 300w, /images/ensayo/06-450w.jpeg 450w" sizes="15vw">
         <img
@@ -205,18 +205,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/07.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Caminata solitaria entre bruma matutina"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Abril 6, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/07.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Caminata solitaria entre bruma matutina"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Abril 6, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/07-150w.webp 150w, /images/ensayo/07-300w.webp 300w, /images/ensayo/07-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/07-150w.jpeg 150w, /images/ensayo/07-300w.jpeg 300w, /images/ensayo/07-450w.jpeg 450w" sizes="15vw">
         <img
@@ -229,18 +229,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/08.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Carretera inundada al amanecer nublado"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 15, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/08.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Carretera inundada al amanecer nublado"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 15, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/08-150w.webp 150w, /images/ensayo/08-300w.webp 300w, /images/ensayo/08-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/08-150w.jpeg 150w, /images/ensayo/08-300w.jpeg 300w, /images/ensayo/08-450w.jpeg 450w" sizes="15vw">
         <img
@@ -253,8 +253,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -263,16 +263,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/09.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Carteles neón en la noche de la ciudad"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 7, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/09.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Carteles neón en la noche de la ciudad"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 7, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/09-150w.webp 150w, /images/ensayo/09-300w.webp 300w, /images/ensayo/09-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/09-150w.jpeg 150w, /images/ensayo/09-300w.jpeg 300w, /images/ensayo/09-450w.jpeg 450w" sizes="15vw">
         <img
@@ -285,18 +285,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/10.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image City Building Office Architecture"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>October 10, 2020"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/10.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image City Building Office Architecture"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>October 10, 2020"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/10-150w.webp 150w, /images/ensayo/10-300w.webp 300w, /images/ensayo/10-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/10-150w.jpeg 150w, /images/ensayo/10-300w.jpeg 300w, /images/ensayo/10-450w.jpeg 450w" sizes="15vw">
         <img
@@ -309,18 +309,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/11.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Contemporary urban walkway"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>November 3, 2020"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/11.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Contemporary urban walkway"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>November 3, 2020"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/11-150w.webp 150w, /images/ensayo/11-300w.webp 300w, /images/ensayo/11-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/11-150w.jpeg 150w, /images/ensayo/11-300w.jpeg 300w, /images/ensayo/11-450w.jpeg 450w" sizes="15vw">
         <img
@@ -333,18 +333,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/12.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Cozy evening terrace with urban greenery"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>November 5, 2020"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/12.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Cozy evening terrace with urban greenery"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>November 5, 2020"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/12-150w.webp 150w, /images/ensayo/12-300w.webp 300w, /images/ensayo/12-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/12-150w.jpeg 150w, /images/ensayo/12-300w.jpeg 300w, /images/ensayo/12-450w.jpeg 450w" sizes="15vw">
         <img
@@ -357,8 +357,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -367,16 +367,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/13.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Cruce iluminado con estelas de luz roja"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 28, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/13.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Cruce iluminado con estelas de luz roja"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 28, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/13-150w.webp 150w, /images/ensayo/13-300w.webp 300w, /images/ensayo/13-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/13-150w.jpeg 150w, /images/ensayo/13-300w.jpeg 300w, /images/ensayo/13-450w.jpeg 450w" sizes="15vw">
         <img
@@ -389,18 +389,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/14.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Destellos fugaces sobre asfalto mojado"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 24, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/14.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Destellos fugaces sobre asfalto mojado"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 24, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/14-150w.webp 150w, /images/ensayo/14-300w.webp 300w, /images/ensayo/14-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/14-150w.jpeg 150w, /images/ensayo/14-300w.jpeg 300w, /images/ensayo/14-450w.jpeg 450w" sizes="15vw">
         <img
@@ -413,18 +413,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/15.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Dos bancos bajo una farola tenue"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 18, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/15.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Dos bancos bajo una farola tenue"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 18, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/15-150w.webp 150w, /images/ensayo/15-300w.webp 300w, /images/ensayo/15-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/15-150w.jpeg 150w, /images/ensayo/15-300w.jpeg 300w, /images/ensayo/15-450w.jpeg 450w" sizes="15vw">
         <img
@@ -437,18 +437,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/16.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image El cielo en un frasco atrapado por la noche"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 10, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/16.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image El cielo en un frasco atrapado por la noche"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 10, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/16-150w.webp 150w, /images/ensayo/16-300w.webp 300w, /images/ensayo/16-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/16-150w.jpeg 150w, /images/ensayo/16-300w.jpeg 300w, /images/ensayo/16-450w.jpeg 450w" sizes="15vw">
         <img
@@ -461,8 +461,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -471,16 +471,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/17.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Espectáculo de luces en icónico teatro urbano"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Enero 30, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/17.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Espectáculo de luces en icónico teatro urbano"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Enero 30, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/17-150w.webp 150w, /images/ensayo/17-300w.webp 300w, /images/ensayo/17-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/17-150w.jpeg 150w, /images/ensayo/17-300w.jpeg 300w, /images/ensayo/17-450w.jpeg 450w" sizes="15vw">
         <img
@@ -493,18 +493,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/20.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de agua congelada en el aire"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 5, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/20.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de agua congelada en el aire"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Febrero 5, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/20-150w.webp 150w, /images/ensayo/20-300w.webp 300w, /images/ensayo/20-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/20-150w.jpeg 150w, /images/ensayo/20-300w.jpeg 300w, /images/ensayo/20-450w.jpeg 450w" sizes="15vw">
         <img
@@ -517,18 +517,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/21.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/21.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/21-150w.webp 150w, /images/ensayo/21-300w.webp 300w, /images/ensayo/21-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/21-150w.jpeg 150w, /images/ensayo/21-300w.jpeg 300w, /images/ensayo/21-450w.jpeg 450w" sizes="15vw">
         <img
@@ -541,18 +541,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/22.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/22.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/22-150w.webp 150w, /images/ensayo/22-300w.webp 300w, /images/ensayo/22-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/22-150w.jpeg 150w, /images/ensayo/22-300w.jpeg 300w, /images/ensayo/22-450w.jpeg 450w" sizes="15vw">
         <img
@@ -565,8 +565,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -575,16 +575,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/23.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/23.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/23-150w.webp 150w, /images/ensayo/23-300w.webp 300w, /images/ensayo/23-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/23-150w.jpeg 150w, /images/ensayo/23-300w.jpeg 300w, /images/ensayo/23-450w.jpeg 450w" sizes="15vw">
         <img
@@ -597,18 +597,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/24.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/24.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/24-150w.webp 150w, /images/ensayo/24-300w.webp 300w, /images/ensayo/24-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/24-150w.jpeg 150w, /images/ensayo/24-300w.jpeg 300w, /images/ensayo/24-450w.jpeg 450w" sizes="15vw">
         <img
@@ -621,18 +621,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/25.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/25.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/25-150w.webp 150w, /images/ensayo/25-300w.webp 300w, /images/ensayo/25-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/25-150w.jpeg 150w, /images/ensayo/25-300w.jpeg 300w, /images/ensayo/25-450w.jpeg 450w" sizes="15vw">
         <img
@@ -645,18 +645,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/26.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/26.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/26-150w.webp 150w, /images/ensayo/26-300w.webp 300w, /images/ensayo/26-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/26-150w.jpeg 150w, /images/ensayo/26-300w.jpeg 300w, /images/ensayo/26-450w.jpeg 450w" sizes="15vw">
         <img
@@ -669,8 +669,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -679,16 +679,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/27.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/27.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/27-150w.webp 150w, /images/ensayo/27-300w.webp 300w, /images/ensayo/27-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/27-150w.jpeg 150w, /images/ensayo/27-300w.jpeg 300w, /images/ensayo/27-450w.jpeg 450w" sizes="15vw">
         <img
@@ -701,18 +701,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/28.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/28.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/28-150w.webp 150w, /images/ensayo/28-300w.webp 300w, /images/ensayo/28-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/28-150w.jpeg 150w, /images/ensayo/28-300w.jpeg 300w, /images/ensayo/28-450w.jpeg 450w" sizes="15vw">
         <img
@@ -725,18 +725,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/29.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/29.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/29-150w.webp 150w, /images/ensayo/29-300w.webp 300w, /images/ensayo/29-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/29-150w.jpeg 150w, /images/ensayo/29-300w.jpeg 300w, /images/ensayo/29-450w.jpeg 450w" sizes="15vw">
         <img
@@ -749,18 +749,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/30.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/30.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/30-150w.webp 150w, /images/ensayo/30-300w.webp 300w, /images/ensayo/30-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/30-150w.jpeg 150w, /images/ensayo/30-300w.jpeg 300w, /images/ensayo/30-450w.jpeg 450w" sizes="15vw">
         <img
@@ -773,8 +773,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -783,16 +783,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/31.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/31.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/31-150w.webp 150w, /images/ensayo/31-300w.webp 300w, /images/ensayo/31-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/31-150w.jpeg 150w, /images/ensayo/31-300w.jpeg 300w, /images/ensayo/31-450w.jpeg 450w" sizes="15vw">
         <img
@@ -805,18 +805,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/32.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/32.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/32-150w.webp 150w, /images/ensayo/32-300w.webp 300w, /images/ensayo/32-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/32-150w.jpeg 150w, /images/ensayo/32-300w.jpeg 300w, /images/ensayo/32-450w.jpeg 450w" sizes="15vw">
         <img
@@ -829,18 +829,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/33.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/33.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/33-150w.webp 150w, /images/ensayo/33-300w.webp 300w, /images/ensayo/33-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/33-150w.jpeg 150w, /images/ensayo/33-300w.jpeg 300w, /images/ensayo/33-450w.jpeg 450w" sizes="15vw">
         <img
@@ -853,18 +853,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/34.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/34.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/34-150w.webp 150w, /images/ensayo/34-300w.webp 300w, /images/ensayo/34-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/34-150w.jpeg 150w, /images/ensayo/34-300w.jpeg 300w, /images/ensayo/34-450w.jpeg 450w" sizes="15vw">
         <img
@@ -877,8 +877,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -887,16 +887,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/35.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/35.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/35-150w.webp 150w, /images/ensayo/35-300w.webp 300w, /images/ensayo/35-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/35-150w.jpeg 150w, /images/ensayo/35-300w.jpeg 300w, /images/ensayo/35-450w.jpeg 450w" sizes="15vw">
         <img
@@ -909,18 +909,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/36.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/36.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/36-150w.webp 150w, /images/ensayo/36-300w.webp 300w, /images/ensayo/36-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/36-150w.jpeg 150w, /images/ensayo/36-300w.jpeg 300w, /images/ensayo/36-450w.jpeg 450w" sizes="15vw">
         <img
@@ -933,18 +933,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/37.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/37.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/37-150w.webp 150w, /images/ensayo/37-300w.webp 300w, /images/ensayo/37-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/37-150w.jpeg 150w, /images/ensayo/37-300w.jpeg 300w, /images/ensayo/37-450w.jpeg 450w" sizes="15vw">
         <img
@@ -957,18 +957,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/38.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/38.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/38-150w.webp 150w, /images/ensayo/38-300w.webp 300w, /images/ensayo/38-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/38-150w.jpeg 150w, /images/ensayo/38-300w.jpeg 300w, /images/ensayo/38-450w.jpeg 450w" sizes="15vw">
         <img
@@ -981,8 +981,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -991,16 +991,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/39.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/39.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/39-150w.webp 150w, /images/ensayo/39-300w.webp 300w, /images/ensayo/39-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/39-150w.jpeg 150w, /images/ensayo/39-300w.jpeg 300w, /images/ensayo/39-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1013,18 +1013,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/40.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/40.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/40-150w.webp 150w, /images/ensayo/40-300w.webp 300w, /images/ensayo/40-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/40-150w.jpeg 150w, /images/ensayo/40-300w.jpeg 300w, /images/ensayo/40-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1037,18 +1037,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/42.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/42.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/42-150w.webp 150w, /images/ensayo/42-300w.webp 300w, /images/ensayo/42-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/42-150w.jpeg 150w, /images/ensayo/42-300w.jpeg 300w, /images/ensayo/42-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1061,18 +1061,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/43.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/43.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/43-150w.webp 150w, /images/ensayo/43-300w.webp 300w, /images/ensayo/43-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/43-150w.jpeg 150w, /images/ensayo/43-300w.jpeg 300w, /images/ensayo/43-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1085,8 +1085,8 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
     <li class="grid-item">
@@ -1095,16 +1095,16 @@
       
       
       
-      
-      
-      <a 
-        href="/images/ensayo/44.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/44.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/44-150w.webp 150w, /images/ensayo/44-300w.webp 300w, /images/ensayo/44-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/44-150w.jpeg 150w, /images/ensayo/44-300w.jpeg 300w, /images/ensayo/44-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1117,18 +1117,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/45.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/45.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/45-150w.webp 150w, /images/ensayo/45-300w.webp 300w, /images/ensayo/45-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/45-150w.jpeg 150w, /images/ensayo/45-300w.jpeg 300w, /images/ensayo/45-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1141,18 +1141,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/65.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/65.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/65-150w.webp 150w, /images/ensayo/65-300w.webp 300w, /images/ensayo/65-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/65-150w.jpeg 150w, /images/ensayo/65-300w.jpeg 300w, /images/ensayo/65-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1165,18 +1165,18 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
       
-      
-      <a 
-        href="/images/ensayo/66.jpg" 
-        class="lightbox__tag ensayo" 
-        aria-label="Gallery image Explosión de gotas en fotografía abstracta"
-        data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
-      >
-
-    <picture>
+        
+        
+        
+        <a 
+          href="images/ensayo/66.jpg" 
+          class="lightbox__tag ensayo" 
+          aria-label="Gallery image Explosión de gotas en fotografía abstracta"
+          data-caption="<a href='/' rel='noopener'>ensayo</a>Marzo 1, 2024"
+        >
+          <picture>
         <source type="image/webp" srcset="/images/ensayo/66-150w.webp 150w, /images/ensayo/66-300w.webp 300w, /images/ensayo/66-450w.webp 450w" sizes="15vw">
 <source type="image/jpeg" srcset="/images/ensayo/66-150w.jpeg 150w, /images/ensayo/66-300w.jpeg 300w, /images/ensayo/66-450w.jpeg 450w" sizes="15vw">
         <img
@@ -1189,42 +1189,61 @@
           class="grid-image"
         >
       </picture>
-  </a>
-
+        </a>
+      
     </li>
   
-    <li class="grid-item grid-item-fake">
+  
+  <li class="grid-item grid-item-fake">
     <a href="/" class="grid-item-fake">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
       </svg>
     </a>
-    </li>
+  </li>
 </ul>
 
 </main>
     <footer class="footer">
     <div class="footer-content">
-        <div class="footer-info home">
-            <p>Fotógrafo enfocado a la fotografía de la naturaleza y paisajes urbanaos.</p>
-            <p>&copy; 2025 Nacho Alonso.</a></p>
-            <ul class="footer-links">
+        <ul class="book__list home">
+            <h2 class="footer-heading">Libros publicados</h2>
+            <li class="book__item">
+                <div class="book__details">
+                    <p class="book__title">Ensayo sobre la noche</p>
+                    <p>Solar de edicións</p>
+                    <p>Primera edición: 400 ejemplares</p>
+                    <p>Vigo, 2022</p>
+                    
+                </div>
+                <div class="book__picture">
+                    <picture>
+        <source type="image/webp" srcset="/images/Ensayo-sobre-la-noche-portada-150w.webp 150w, /images/Ensayo-sobre-la-noche-portada-300w.webp 300w, /images/Ensayo-sobre-la-noche-portada-450w.webp 450w" sizes="15vw">
+<source type="image/jpeg" srcset="/images/Ensayo-sobre-la-noche-portada-150w.jpeg 150w, /images/Ensayo-sobre-la-noche-portada-300w.jpeg 300w, /images/Ensayo-sobre-la-noche-portada-450w.jpeg 450w" sizes="15vw">
+        <img
+          src="/images/Ensayo-sobre-la-noche-portada-150w.jpeg"
+          width="450"
+          height="674"
+          alt="Portada del libro Ensayo sobre la noche"
+          loading="lazy"
+          decoding="async"
+          class="book__picture--portada"
+        >
+      </picture>
+                    
+                </div>
+            </li>
+        </ul>
+        <ul class="footer-links">
 
-
-                <li class="footer-link"><a href="https://github.com/tannerdolby">Instagram</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-    <video autoplay muted loop id="bg-video">
-      <source src="/videos/bg-street-01.mp4" type="video/mp4">
-    </video>
+            <li class="footer-link">
+                <a href="https://github.com/tannerdolby">Instagram: @ntx_a_</a>
+            </li>
+        </ul>
+    </footer>
 
     <script src="/js/baguetteBox.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/lightbox.js"></script>
-
-
   </body>
 </html>
