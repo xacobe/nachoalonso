@@ -1,6 +1,7 @@
 # Nacho Alonso
 Cloned from [https://github.com/tannerdolby/eleventy-photo-gallery](https://github.com/tannerdolby/eleventy-photo-gallery)
 
+Mostrando en gh-pages a través de la carpeta /docs
 
 ## Features 
 - Build-time image transformations and responsive image markup in templates using [@11ty/eleventy-img](https://www.11ty.dev/docs/plugins/image/)
