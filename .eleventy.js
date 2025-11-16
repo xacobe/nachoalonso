@@ -144,7 +144,7 @@ eleventyConfig.addCollection("ensayo", function(collectionApi) {
   return {
     dir: {
       input: "src",
-      output: "_docs",
+      output: "_site",
       layouts: "_includes/layouts",
       includes: "_includes",
     },
