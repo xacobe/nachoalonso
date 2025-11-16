@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/css/baguetteBox.min.css">
     
     <style>
-      @charset "UTF-8";*,::after,::before{box-sizing:border-box}body{margin:0;padding:0;background:#fcfcfc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;font-size:16px;line-height:1.6}img{max-width:100%;width:100%;height:100%;object-fit:cover}h1,h2,h3,h4,h5{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;color:#212121}.h1,h1{font-size:clamp(2.75rem,8vw,3.25rem)}.h2,h2{font-size:clamp(1.5rem,5vw,1.8rem)}.grid-container{display:grid;background-color:#fff;position:fixed;height:100dvh;width:100dvw;gap:.2rem;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}.header{justify-content:flex-start}@media (min-aspect-ratio:5/2){.header{justify-content:flex-end}.grid-container{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}}@media (max-aspect-ratio:3/3.2){.header{justify-content:center!important}.grid-container{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}}.grid-item{overflow:hidden;width:100%;height:100%;position:relative;aspect-ratio:1/1}.grid-item a{position:absolute;inset:0;display:block;opacity:0;visibility:hidden;cursor:pointer;transition:opacity 1s ease-in-out,visibility 1s ease-in-out}.grid-item a.active{opacity:1;visibility:visible;z-index:1}.grid-item a:first-child.active{z-index:2}.grid-item img{width:100%;height:100%;object-fit:cover;display:block;transform:translateZ(0)}@keyframes random-cycle{0%,20%{opacity:1;visibility:visible}100%,25%{opacity:0;visibility:hidden}}.grid-item.css-animated a{animation:random-cycle 15s infinite}.grid-item.css-animated a:nth-child(1){animation-delay:0s}.grid-item.css-animated a:nth-child(2){animation-delay:3s}.grid-item.css-animated a:nth-child(3){animation-delay:6s}.grid-item.css-animated a:nth-child(4){animation-delay:9s}.grid-item.css-animated a:nth-child(5){animation-delay:12s}.baguetteBox-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}.baguetteBox-button{background-color:transparent!important;border-radius:100%}.baguetteBox-button#close-button svg{position:fixed;top:1rem;right:1rem;left:inherit}.baguetteBox-button#close-button svg g{stroke:#000;stroke-width:2px!important}.baguetteBox-button:hover{background-color:transparent}.baguetteBox-button:hover g{stroke:#fff!important}#next-button,#previous-button{display:none}#baguetteBox-overlay{background-color:#fff!important}:has(.bg-dark){background-blend-mode:difference;filter:invert(1)}#baguetteBox-slider .full-image figcaption{display:inline-flex;color:#666;background-color:transparent;font-family:monospace;font-size:.9rem;text-transform:capitalize;padding:1rem;justify-content:center}#baguetteBox-slider .full-image figcaption a{color:#000;padding-inline-end:1rem;text-underline-offset:.2rem}.page-title{display:block;padding-block-start:1rem;padding-inline:1rem;width:8rem;font-size:1.5rem;font-weight:bolder;text-transform:uppercase;color:#fff;line-height:1.1;text-align:center;text-decoration:none}.page-title .first_name{letter-spacing:3.2px}.slide--content{overflow:hidden;border-block:solid #fff 2px;transition:transform .5s ease-in;will-change:transform}.slide--content.slid-up{transform:translateY(-33.33%)}@media (min-aspect-ratio:5/2){.slide--content.slid-up{transform:translateY(-50%)}}@media (max-aspect-ratio:3/3.2){.header{width:100%}.header .page-title{margin-inline:auto}.slide--content.slid-up{transform:translateY(-50%)}}.slide--move-up{transition:all 1.5s ease-in-out}.slid-up .slide--move-up{transform:rotate(180deg);transition:all 1.5s ease-in-out}.btn-pill{display:flex;justify-content:center;align-items:center;background-color:transparent;color:#c30e0e;background-color:#fff;position:absolute;right:0;bottom:0;z-index:5;height:2rem;width:2rem;margin:1rem;border-radius:100% 100%;font-size:1rem;text-decoration:none}#bg-video{position:fixed;width:100%;bottom:0;z-index:-3}.grid-item-fake{display:flex!important;flex-direction:column;justify-content:flex-end;align-items:flex-end;font-family:monospace;padding:1rem;text-align:right}.grid-item-fake a{opacity:1;visibility:visible;position:relative;color:#000;padding:0;transform:rotate(-90deg)}.header{position:absolute;z-index:10}.book__list{display:flex;flex-direction:column;align-items:center}.book__item{display:flex;justify-content:center}.book__details{flex-basis:70%}.book__title{font-size:1rem;font-weight:700;margin-block-end:.4rem;border-bottom:solid 2px #000;width:fit-content}.book__picture{background-size:contain;background-position:left;background-repeat:no-repeat;height:20dvh;margin-block-start:.2rem}.book__picture img{object-fit:contain}.footer{position:absolute;bottom:0;color:#d6d6d6;z-index:-2;padding-inline:1.4rem;background-color:#fff!important;width:100%;height:33.33dvh;font-size:.8rem;height:33.33dvh}.footer h2,.footer h3,.footer h4{color:#000;font-size:1.4rem;text-transform:uppercase;text-align:center;margin-block-start:.4rem;margin-block-end:1rem}.footer a{color:#fff!important}.footer p{color:#000;padding:.5rem;padding-block:0}@media (min-aspect-ratio:5/2){.footer{height:50dvh}}@media (max-aspect-ratio:3/3.2){.footer{height:50dvh}}.footer-links{color:#000;position:absolute!important;bottom:0;right:0}.footer-links a{color:#000!important}.four-oh-four{margin:0 auto;width:100%;max-width:90ch;padding-left:1.5rem;padding-right:1.5rem;overflow:hidden;background:inherit;min-height:100vh}.four-oh-four ul{padding-left:0}.four-oh-four ul li{padding:12px 14px;margin:10px auto}*,::after,::before{box-sizing:border-box}ol[class],ul[class]{padding:0}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,h5,li,ol[class],p,ul[class]{margin:0}ol[class],ul[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important;scroll-behavior:auto!important}}
+      @charset "UTF-8";*,::after,::before{box-sizing:border-box}body{margin:0;padding:0;background:#fcfcfc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;font-size:16px;line-height:1.6}img{max-width:100%;width:100%;height:100%;object-fit:cover}h1,h2,h3,h4,h5{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;color:#212121}.h1,h1{font-size:clamp(2.75rem,8vw,3.25rem)}.h2,h2{font-size:clamp(1.5rem,5vw,1.8rem)}.grid-container{display:grid;background-color:#fff;position:fixed;height:100dvh;width:100dvw;gap:.2rem;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}.header{justify-content:flex-start}@media (min-aspect-ratio:5/2){.header{justify-content:flex-end}.grid-container{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr)}}@media (max-aspect-ratio:3/3.2){.header{justify-content:center!important}.grid-container{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}}.grid-item{overflow:hidden;width:100%;height:100%;position:relative;aspect-ratio:1/1}.grid-item a{position:absolute;inset:0;display:block;opacity:0;visibility:hidden;cursor:pointer;transition:opacity 1s ease-in-out,visibility 1s ease-in-out}.grid-item a.active{opacity:1;visibility:visible;z-index:1}.grid-item a:first-child.active{z-index:2}.grid-item img{width:100%;height:100%;object-fit:cover;display:block;transform:translateZ(0)}@keyframes random-cycle{0%,20%{opacity:1;visibility:visible}100%,25%{opacity:0;visibility:hidden}}.grid-item.css-animated a{animation:random-cycle 15s infinite}.grid-item.css-animated a:nth-child(1){animation-delay:0s}.grid-item.css-animated a:nth-child(2){animation-delay:3s}.grid-item.css-animated a:nth-child(3){animation-delay:6s}.grid-item.css-animated a:nth-child(4){animation-delay:9s}.grid-item.css-animated a:nth-child(5){animation-delay:12s}.baguetteBox-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000}.baguetteBox-button{background-color:transparent!important;border-radius:100%}.baguetteBox-button#close-button svg{position:fixed;top:1rem;right:1rem;left:inherit}.baguetteBox-button#close-button svg g{stroke:#000;stroke-width:2px!important}.baguetteBox-button:hover{background-color:transparent}.baguetteBox-button:hover g{stroke:#fff!important}#next-button,#previous-button{display:none}#baguetteBox-overlay{background-color:#fff!important}:has(.bg-dark){background-blend-mode:difference;filter:invert(1)}#baguetteBox-slider .full-image figcaption{display:inline-flex;color:#666;background-color:transparent;font-family:monospace;font-size:.9rem;text-transform:capitalize;padding:1rem;justify-content:center}#baguetteBox-slider .full-image figcaption a{color:#000;padding-inline-end:1rem;text-underline-offset:.2rem}.page-title{display:block;padding-block-start:1rem;padding-inline:1rem;width:8rem;font-size:1.5rem;font-weight:bolder;text-transform:uppercase;color:#fff;line-height:1.1;text-align:center;text-decoration:none}.page-title .first_name{letter-spacing:3.2px}.slide--content{overflow:hidden;border-block:solid #fff 2px;transition:transform .5s ease-in;will-change:transform}.slide--content.slid-up{transform:translateY(-33.33%)}@media (min-aspect-ratio:5/2){.slide--content.slid-up{transform:translateY(-50%)}}@media (max-aspect-ratio:3/3.2){.header{width:100%}.header .page-title{margin-inline:auto}.slide--content.slid-up{transform:translateY(-50%)}}.slide--move-up{transition:all 1.5s ease-in-out}.slid-up .slide--move-up{transform:rotate(180deg);transition:all 1.5s ease-in-out}.btn-pill{display:flex;justify-content:center;align-items:center;background-color:transparent;color:#c30e0e;background-color:#fff;position:absolute;right:0;bottom:0;z-index:5;height:2rem;width:2rem;margin:1rem;border-radius:100% 100%;font-size:1rem;text-decoration:none}#bg-video{position:fixed;width:100%;bottom:0;z-index:-3}.grid-item-fake{display:flex!important;flex-direction:column;justify-content:flex-end;align-items:flex-end;font-family:monospace;padding:1rem;text-align:right}.grid-item-fake a{opacity:1;visibility:visible;position:relative;color:#000;padding:0;transform:rotate(-90deg)}.header{position:absolute;z-index:10}.book__list{display:flex;flex-direction:column;align-items:center}.book__item{display:flex;justify-content:center}.book__details{flex-basis:70%}.book__title{font-size:1rem;font-weight:700;margin-block-end:.4rem;border-bottom:solid 2px #000;width:fit-content}.book__picture{background-size:contain;background-position:left;background-repeat:no-repeat;height:20dvh;margin-block-start:.2rem}.book__picture img{object-fit:contain}.footer{position:absolute;bottom:0;color:#d6d6d6;z-index:-2;padding-inline:1.4rem;background-color:#fff!important;width:100%;height:33.33dvh;font-size:.8rem;font-family:sans;height:33.33dvh}.footer h2,.footer h3,.footer h4{color:#000;font-size:1.4rem;font-family:sans;text-transform:uppercase;text-align:center;margin-block-start:.4rem;margin-block-end:1rem}.footer a{color:#fff!important}.footer p{color:#000;padding:.5rem;padding-block:0}@media (min-aspect-ratio:5/2){.footer{height:50dvh}}@media (max-aspect-ratio:3/3.2){.footer{height:50dvh}}.footer-links{color:#000;position:absolute!important;bottom:0;right:0}.footer-links a{color:#000!important}.four-oh-four{margin:0 auto;width:100%;max-width:90ch;padding-left:1.5rem;padding-right:1.5rem;overflow:hidden;background:inherit;min-height:100vh}.four-oh-four ul{padding-left:0}.four-oh-four ul li{padding:12px 14px;margin:10px auto}*,::after,::before{box-sizing:border-box}ol[class],ul[class]{padding:0}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,h5,li,ol[class],p,ul[class]{margin:0}ol[class],ul[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important;scroll-behavior:auto!important}}
     </style>
   </head>
 
@@ -47,133 +47,7 @@
     
 <main id="main">
     
-<ul class="grid-container gallery slide--content">
-  
-    <li class="grid-item">
-      
-      
-      
-      
-      
-        
-        
-        
-        <a 
-          href="/images/francia/01.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Abstract architecture black and white boardwalk"
-          data-caption="<a href='/' rel='noopener'>francia</a>October 14, 2020"
-        >
-          <img src="/images/francia/01.jpg" alt="Abstract architecture black and white boardwalk with glass like floor" class="grid-image" loading="lazy">
-        </a>
-      
-        
-        
-        
-        <a 
-          href="/images/francia/02.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Arquitectura en espiral en distrito financiero"
-          data-caption="<a href='/' rel='noopener'>francia</a>Febrero 14, 2024"
-        >
-          <img src="/images/francia/02.jpg" alt="Edificio de oficinas con diseño arquitectónico curvo" class="grid-image" loading="lazy">
-        </a>
-      
-    </li>
-  
-    <li class="grid-item">
-      
-      
-      
-      
-      
-        
-        
-        
-        <a 
-          href="/images/francia/03.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Asfalto bajo el agua en amanecer gris"
-          data-caption="<a href='/' rel='noopener'>francia</a>Marzo 22, 2024"
-        >
-          <img src="/images/francia/03.jpg" alt="Camino inundado con reflejos del cielo nublado sobre el pavimento" class="grid-image" loading="lazy">
-        </a>
-      
-        
-        
-        
-        <a 
-          href="/images/francia/04.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Autopista inundada tras fuertes lluvias"
-          data-caption="<a href='/' rel='noopener'>francia</a>Enero 13, 2024"
-        >
-          <img src="/images/francia/04.jpg" alt="Carretera anegada bajo un puente moderno tras una tormenta" class="grid-image" loading="lazy">
-        </a>
-      
-    </li>
-  
-    <li class="grid-item">
-      
-      
-      
-      
-      
-        
-        
-        
-        <a 
-          href="/images/francia/05.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Brown painted wall on dim light"
-          data-caption="<a href='/' rel='noopener'>francia</a>October 18, 2020"
-        >
-          <img src="/images/francia/05.jpg" alt="Brown painted wall with two benches and dim light above" class="grid-image" loading="lazy">
-        </a>
-      
-        
-        
-        
-        <a 
-          href="/images/francia/06.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Buildings during nighttime"
-          data-caption="<a href='/' rel='noopener'>francia</a>October 9, 2020"
-        >
-          <img src="/images/francia/06.jpg" alt="Buildings during nighttime with orange lighting and water below" class="grid-image" loading="lazy">
-        </a>
-      
-    </li>
-  
-    <li class="grid-item">
-      
-      
-      
-      
-      
-        
-        
-        
-        <a 
-          href="/images/francia/07.jpg" 
-          class="lightbox__tag francia" 
-          aria-label="Gallery image Caminata solitaria entre bruma matutina"
-          data-caption="<a href='/' rel='noopener'>francia</a>Abril 6, 2024"
-        >
-          <img src="/images/francia/07.jpg" alt="Caminante en una calle desierta con neblina espesa al fondo" class="grid-image" loading="lazy">
-        </a>
-      
-    </li>
-  
-  
-  <li class="grid-item grid-item-fake">
-    <a href="/" class="grid-item-fake">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-      </svg>
-    </a>
-  </li>
-</ul>
+
 
 </main>
     <footer class="footer">
@@ -189,7 +63,19 @@
                     
                 </div>
                 <div class="book__picture">
-                    <img src="/images//Ensayo-sobre-la-noche-portada.jpeg" alt="Portada del libro Ensayo sobre la noche" class="book__picture--portada" loading="lazy">
+                    <picture>
+        <source type="image/webp" srcset="/images/Ensayo-sobre-la-noche-portada-150w.webp 150w, /images/Ensayo-sobre-la-noche-portada-300w.webp 300w, /images/Ensayo-sobre-la-noche-portada-450w.webp 450w" sizes="15vw">
+<source type="image/jpeg" srcset="/images/Ensayo-sobre-la-noche-portada-150w.jpeg 150w, /images/Ensayo-sobre-la-noche-portada-300w.jpeg 300w, /images/Ensayo-sobre-la-noche-portada-450w.jpeg 450w" sizes="15vw">
+        <img
+          src="/images/Ensayo-sobre-la-noche-portada-150w.jpeg"
+          width="450"
+          height="674"
+          alt="Portada del libro Ensayo sobre la noche"
+          loading="lazy"
+          decoding="async"
+          class="book__picture--portada"
+        >
+      </picture>
                     
                 </div>
             </li>
