@@ -19,7 +19,7 @@ module.exports = (eleventyConfig) => {
   markdownTemplateEngine: "njk";
 
   eleventyConfig.addCollection("gallery", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/gallery/**/*.md");
+    return collectionApi.getFilteredByGlob("src/gallery/ensayo/*.md");
   });
 
   // Nueva colección solo para ensayos
@@ -28,6 +28,7 @@ eleventyConfig.addCollection("ensayo", function(collectionApi) {
 });
 // Descomentar esto para añadir colección francia
 // Descomentar tambiern en src/francia.njk la referencia a la colección
+// Y en la colección "gallery" (unas lineas más arriba) cambiar el glob a "src/gallery/**/*.md"
 // eleventyConfig.addCollection("francia", function(collectionApi) {
 //   return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
 // });
