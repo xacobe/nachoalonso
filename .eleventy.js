@@ -26,10 +26,11 @@ module.exports = (eleventyConfig) => {
 eleventyConfig.addCollection("ensayo", function(collectionApi) {
   return collectionApi.getFilteredByGlob("src/gallery/ensayo/*.md");
 });
-
-eleventyConfig.addCollection("francia", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
-});
+// Descomentar esto para añadir colección francia
+// Descomentar tambiern en src/francia.njk la referencia a la colección
+// eleventyConfig.addCollection("francia", function(collectionApi) {
+//   return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
+// });
 
   // Perform manual passthrough file copy to include directories in the build output _site
     // Imagenes CSS
