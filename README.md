@@ -84,3 +84,8 @@ Feel free to report any issues and submit feature requests. I built this templat
 
 - Open an [issue](https://github.com/tannerdolby/11ty-photo-gallery/issues) for any bugs or feature requests! 
 - Have a look at the [contributing guidelines](https://github.com/tannerdolby/11ty-photo-gallery/blob/master/CONTRIBUTING.md) before submitting a PR!
+
+## Publicar how to
+- Hacer los cambios en master y publicar en rama master
+- Copiar el contenido de la carpeta _sites en una carpeta temporal.
+- Cambiar la rama local a gh-pages y pegar el contenido copiado anteriormente a la caperta docs. Antes de copiar borrar todo menos el archivo CNAME
