@@ -8,7 +8,9 @@
           href="{{ ('/images/' ~ subfolder ~ '/' ~ largeSrc) | url }}"
           class="lightbox__tag" 
           aria-label="Gallery image {{ image.data.title }}"
-          data-caption="<a href='{{ ('/' ~ subfolder) | url }}' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
+          data-caption="<a href='{{ ('/' ~ subfolder) | url }}' rel='noopener'>{{ subfolder }}</a>
+          {# {{ image.data.photoDate }} #}
+          "
         >
           {% img {
             src: image.data.src,
