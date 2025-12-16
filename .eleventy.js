@@ -33,11 +33,12 @@ eleventyConfig.addCollection("ensayo", function(collectionApi) {
 //   return collectionApi.getFilteredByGlob("src/gallery/francia/*.md");
 // });
 
-  // Perform manual passthrough file copy to include directories in the build output _site
+
+  // Perform manual passthrough file copy to include directories in the build output docs
     // Imagenes CSS
   eleventyConfig.addPassthroughCopy("src/_includes/css/images");
     
-  eleventyConfig.addPassthroughCopy("src/images/**/*.{jpg,jpeg,png,gif,webp,svg}");
+  // eleventyConfig.addPassthroughCopy("src/images/**/*.{jpg,jpeg,png,gif,webp,svg}");
   eleventyConfig.addPassthroughCopy("./src/photos");
   eleventyConfig.addPassthroughCopy("./src/videos");
   eleventyConfig.addPassthroughCopy("./src/sounds");
@@ -97,55 +98,72 @@ eleventyConfig.addCollection("ensayo", function(collectionApi) {
     return year.toString();
   });
 
-  eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "./src/images/" }) {
-    if (!alt) {
-      throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
-    }
+  eleventyConfig.addShortcode("img", async function({ src, alt, className, imgDir = "./src/images/ensayo/" }) {
+  if (!alt) {
+    throw new Error(`Missing \`alt\` on responsive image from: ${src}`);
+  }
+
+  // Asegurar que imgDir termine con /
+  const normalizedInputDir = imgDir.endsWith('/') ? imgDir : imgDir + '/';
   
-    const fullInputPath = path.join(__dirname, imgDir, src);
-    console.log("Procesando imagen desde:", fullInputPath);
+  // Normalizar para la URL y output (quitar ./src/)
+  const normalizedImgDir = normalizedInputDir
+    .replace(/^\.\/src\//, '')
+    .replace(/\/$/, '');
   
-    try {
-      const metadata = await Image(fullInputPath, {
-        widths: [150, 300, 450],
-        formats: ["webp", "jpeg"],
-        urlPath: `/images/${imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')}/`,
-        outputDir: path.join("_site", "images", imgDir.replace('./src/images/', '').replace('./src/', '').replace(/\/$/, '')),
-        filenameFormat: (id, src, width, format) => {
-          const parsed = path.parse(src);
-          return `${parsed.name}-${width}w.${format}`;
-        }
-      });
+  // Ruta completa de entrada
+  const fullInputPath = path.join(__dirname, normalizedInputDir, src);
   
-      const lowsrc = metadata.jpeg[0];
-      const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+  // Directorio de salida (usa __dirname para ruta absoluta)
+  const outputDir = path.join(__dirname, "docs", normalizedImgDir);
   
-      const sources = Object.values(metadata).map((imageFormat) => {
-        return `<source type="image/${imageFormat[0].format}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="15vw">`;
-      }).join("\n");
-  
-      return `<picture>
-        ${sources}
-        <img
-          src="${lowsrc.url}"
-          width="${highsrc.width}"
-          height="${highsrc.height}"
-          alt="${alt}"
-          loading="lazy"
-          decoding="async"
-          class="${className || ''}"
-        >
-      </picture>`;
-    } catch (error) {
-      console.error("Error procesando imagen:", error);
-      return `<div class="image-error">Error cargando imagen: ${src}</div>`;
-    }
-  });
+  console.log("📸 Procesando:", src);
+  console.log("   Input:", fullInputPath);
+  console.log("   Output:", outputDir);
+  console.log("   URL:", `/${normalizedImgDir}/`);
+
+  try {
+    const metadata = await Image(fullInputPath, {
+      widths: [150, 300, 450, 1024],
+      formats: ["webp", "jpeg"],
+      urlPath: `/${normalizedImgDir}/`,
+      outputDir: outputDir,
+      filenameFormat: (id, src, width, format) => {
+        const parsed = path.parse(src);
+        return `${parsed.name}-${width}w.${format}`;
+      }
+    });
+
+    const lowsrc = metadata.jpeg[0];
+    const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+    const sources = Object.values(metadata).map((imageFormat) => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="(min-width: 1024px) 15vw, (min-width: 768px) 25vw, 50vw">`;
+    }).join("\n");
+
+    return `<picture>
+${sources}
+  <img
+    src="${lowsrc.url}"
+    width="${highsrc.width}"
+    height="${highsrc.height}"
+    alt="${alt}"
+    loading="lazy"
+    decoding="async"
+    class="${className || ''}"
+  >
+</picture>`;
+  } catch (error) {
+    console.error("❌ Error procesando imagen:", error.message);
+    console.error("   Ruta intentada:", fullInputPath);
+    return `<!-- Error: imagen ${src} no encontrada -->`;
+  }
+});
 
   return {
     dir: {
       input: "src",
-      output: "_site",
+      output: "docs",
       layouts: "_includes/layouts",
       includes: "_includes",
     },
