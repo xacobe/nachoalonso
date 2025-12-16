@@ -2,13 +2,16 @@
   {% for group in collections.gallery.slice(0, 48) | batch(4) %}
     <li class="grid-item">
       {% for image in group %}
-        {% set largeSrc = image.data.src | replace("-300w.", "-1024w.") | replace("-small.", "-large.") %}
-        {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') %}
+        {# Construir el nombre de la imagen grande #}
+        {% set baseName = image.data.src | replace(".jpg", "") | replace(".png", "") | replace(".jpeg", "") %}
+        {% set largeSrc = baseName ~ "-1024w.jpeg" %}
+        {# Normalizar subfolder sin regex #}
+        {% set subfolder = image.data.imgDir | replace('./src/images/', '') | replace('./src/', '') | replace('/', '') %}
         <a 
-          href="{{ ('/images/' ~ subfolder ~ '/' ~ largeSrc) | url }}"
+          href="/images/{{ subfolder }}/{{ largeSrc }}"
           class="lightbox__tag" 
           aria-label="Gallery image {{ image.data.title }}"
-          data-caption="<a href='{{ ('/' ~ subfolder) | url }}' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
+          data-caption="<a href='/{{ subfolder }}' rel='noopener'>{{ subfolder }}</a>"
         >
           {% img {
             src: image.data.src,

@@ -2,7 +2,7 @@
   {% for group in collections.francia.slice(0, 12) | batch(2) %}
     <li class="grid-item">
       {% set photoBg = image.data.photoBg %}
-      {% set photoDate = image.data.photoDate %}
+      {# {% set photoDate = image.data.photoDate %} #}
       {% set title = image.data.title %}
       {% set alt = image.data.alt %}
       {% for image in group %}
@@ -13,7 +13,9 @@
           href="{{ ('/images/' ~ subfolder ~ '/' ~ largeSrc) | url }}" 
           class="lightbox__tag {{ subfolder }}" 
           aria-label="Gallery image {{ image.data.title }}"
-          data-caption="<a href='{{ '/' | url }}' rel='noopener'>{{ subfolder }}</a>{{ image.data.photoDate }}"
+          data-caption="<a href='{{ '/' | url }}' rel='noopener'>{{ subfolder }}</a>
+          {# {{ image.data.photoDate }} #}
+          "
         >
           {% img {
             src: image.data.src,
